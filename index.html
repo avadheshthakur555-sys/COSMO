@@ -131,7 +131,7 @@ canvas{display:block;position:absolute;top:0;left:0;}
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   filter:drop-shadow(0 0 32px rgba(60,200,255,.65));
   animation:tBnc 2s ease-in-out infinite;margin-bottom:4px;}
-@keyframes tBnc{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px) scale(1.03);}}
+
 .gsub{font-family:'Fredoka One',cursive;font-size:15px;color:rgba(185,220,255,.55);
   letter-spacing:5px;margin-bottom:18px;}
 .bestLbl{font-family:'Fredoka One',cursive;font-size:13px;color:rgba(255,215,80,.85);
@@ -211,7 +211,7 @@ canvas{display:block;position:absolute;top:0;left:0;}
 .gtitle-orbit{position:absolute;inset:-18px;border-radius:50%;border:1px solid rgba(80,200,255,.18);animation:orbitSpin 8s linear infinite;}
 .gtitle-orbit::after{content:'✦';position:absolute;top:50%;left:0;transform:translate(-50%,-50%);color:rgba(80,200,255,.7);font-size:10px;}
 @keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.gtitle{font-family:'Fredoka One',cursive;font-size:clamp(48px,9vw,108px);background:linear-gradient(135deg,#fff 0%,#b0efff 18%,#60dfff 45%,#ffe89a 75%,#ffd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 32px rgba(60,200,255,.65));animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
+.gtitle{font-family:'Fredoka One',cursive;font-size:clamp(48px,9vw,108px);background:linear-gradient(135deg,#fff 0%,#b0efff 18%,#60dfff 45%,#ffe89a 75%,#ffd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 52px rgba(60,200,255,.95)) drop-shadow(0 0 20px rgba(255,215,0,.55));animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
 .gsub{font-family:'Fredoka One',cursive;font-size:14px;color:rgba(185,220,255,.5);letter-spacing:6px;margin-bottom:12px;}
 .bestLbl{font-family:'Fredoka One',cursive;font-size:13px;background:rgba(0,0,0,.5);border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:6px 20px;color:rgba(255,215,80,.9);letter-spacing:2px;margin-bottom:14px;box-shadow:0 0 18px rgba(255,200,0,.12);}
 .sbtn{font-family:'Fredoka One',cursive;font-size:22px;padding:15px 64px;border:none;cursor:pointer;border-radius:60px;background:linear-gradient(135deg,#2ef 0%,#06f 50%,#52f 100%);color:#fff;letter-spacing:2px;box-shadow:0 8px 28px rgba(0,130,255,.5);animation:btnPulse 2s ease-in-out infinite;transition:transform .15s;}
@@ -408,16 +408,29 @@ canvas{display:block;position:absolute;top:0;left:0;}
   align-items:center;width:100%;max-height:100vh;overflow:hidden;padding:8px 12px;}
 /* Cosmic pill border for menu title */
 .gtitle-wrap{position:relative;margin-bottom:4px;}
-.gtitle-orbit{position:absolute;inset:-18px;border-radius:50%;
-  border:1px solid rgba(80,200,255,.18);animation:orbitSpin 8s linear infinite;}
-.gtitle-orbit::after{content:'✦';position:absolute;top:50%;left:0;
-  transform:translate(-50%,-50%);color:rgba(80,200,255,.7);font-size:10px;}
+.gtitle-orbit{position:absolute;border-radius:50%;
+  border-style:solid;animation:orbitSpin linear infinite;}
+.gtitle-orbit-1{inset:-22px;border-width:1.5px;
+  border-color:rgba(80,200,255,.35) rgba(80,200,255,.06) rgba(80,200,255,.35) rgba(80,200,255,.06);
+  animation-duration:6s;box-shadow:0 0 16px rgba(80,200,255,.12);}
+.gtitle-orbit-1::after{content:'●';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
+  color:rgba(80,220,255,.9);font-size:7px;text-shadow:0 0 8px rgba(80,220,255,1);}
+.gtitle-orbit-2{inset:-38px;border-width:1px;
+  border-color:rgba(255,215,0,.25) rgba(255,215,0,.04) rgba(255,215,0,.25) rgba(255,215,0,.04);
+  animation-duration:10s;animation-direction:reverse;}
+.gtitle-orbit-2::before{content:'◆';position:absolute;bottom:0;right:0;transform:translate(50%,50%);
+  color:rgba(255,215,0,.85);font-size:6px;text-shadow:0 0 7px rgba(255,215,0,1);}
+.gtitle-orbit-3{inset:-54px;border-width:1px;
+  border-color:rgba(255,80,200,.18) rgba(255,80,200,.03) rgba(255,80,200,.18) rgba(255,80,200,.03);
+  animation-duration:15s;}
+.gtitle-orbit-3::after{content:'★';position:absolute;top:50%;right:0;transform:translate(50%,-50%);
+  color:rgba(255,100,200,.8);font-size:6px;text-shadow:0 0 7px rgba(255,100,200,1);}
 .gtitle{font-family:'Fredoka One',cursive;font-size:clamp(48px,9vw,108px);
   background:linear-gradient(135deg,#fff 0%,#b0efff 18%,#60dfff 45%,#ffe89a 75%,#ffd 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 32px rgba(60,200,255,.65));
-  animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
-@keyframes tBnc{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px) scale(1.03);}}
+  filter:drop-shadow(0 0 48px rgba(60,200,255,.9)) drop-shadow(0 0 18px rgba(255,215,0,.5));
+  text-shadow:0 0 80px rgba(60,200,255,.45);animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
+@keyframes tBnc{0%,100%{transform:translateY(0);filter:drop-shadow(0 0 48px rgba(60,200,255,.9)) drop-shadow(0 0 18px rgba(255,215,0,.5));}50%{transform:translateY(-10px) scale(1.05);filter:drop-shadow(0 0 80px rgba(100,240,255,1)) drop-shadow(0 0 36px rgba(255,215,0,.85));}}
 @keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 .gsub{font-family:'Fredoka One',cursive;font-size:14px;color:rgba(185,220,255,.5);
   letter-spacing:6px;margin-bottom:12px;}
@@ -483,6 +496,7 @@ canvas{display:block;position:absolute;top:0;left:0;}
     <div><div class="plabel">Gems</div><div class="pval" id="gEl">0</div></div></div>
 </div>
 <button id="pauseBtn" onclick="togglePause()">⏸ PAUSE</button>
+<button id="muteBtn" onclick="toggleMute()" style="position:absolute;top:10px;right:88px;z-index:6;font-size:16px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:50%;width:36px;height:36px;cursor:pointer;display:none;align-items:center;justify-content:center;color:rgba(255,255,255,.6);transition:color .2s,background .2s;">🔊</button>
 
 <!-- COMBO pill -->
 <div id="comboPill">
@@ -542,13 +556,16 @@ canvas{display:block;position:absolute;top:0;left:0;}
     <canvas id="menuStars" style="position:absolute;inset:0;z-index:0;pointer-events:none;"></canvas>
     <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;padding:8px 12px;">
       <div style="position:relative;margin-bottom:2px;">
-        <div class="gtitle-orbit"></div>
+        <div class="gtitle-orbit gtitle-orbit-1"></div>
+        <div class="gtitle-orbit gtitle-orbit-2"></div>
+        <div class="gtitle-orbit gtitle-orbit-3"></div>
         <div class="gtitle">COSMO</div>
       </div>
       <div class="gsub">✦ SOLAR SYSTEM RUNNER ✦</div>
       <div style="display:flex;gap:14px;font-size:20px;margin-bottom:10px;animation:pRow 5s ease-in-out infinite">☀️🪨🌫🌍🔴🪐💍</div>
       <div class="bestLbl" id="bLbl">🏆 BEST: 0</div>
       <button class="sbtn" onclick="showModeSelect()">🚀 PLAY</button>
+      <button onclick="showLeaderboard()" style="font-family:'Fredoka One',cursive;font-size:15px;padding:10px 36px;border:1.5px solid rgba(255,215,0,.35);background:rgba(255,215,0,.08);color:rgba(255,215,80,.9);border-radius:50px;cursor:pointer;letter-spacing:2px;margin-top:6px;transition:all .18s;" onmouseover="this.style.background='rgba(255,215,0,.18)'" onmouseout="this.style.background='rgba(255,215,0,.08)'">🏆 LEADERBOARD</button>
       <div class="htxt" style="margin:8px 0 10px">SPACE / TAP · Double-tap = Double Jump · P = Pause</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;max-width:460px;width:100%;">
         <div class="feat-card"><div class="feat-icon">☀️</div><div class="feat-name">Solar System</div><div class="feat-desc">Sun → Saturn</div></div>
@@ -632,6 +649,20 @@ canvas{display:block;position:absolute;top:0;left:0;}
     </div>
     <button class="launch-btn" onclick="launchGame()">🚀 LAUNCH!</button>
     <div class="htxt" style="margin-top:14px">Press Enter or tap Launch</div>
+  </div>
+
+
+  <!-- ── LEADERBOARD ── -->
+  <div class="scr" id="lbScr" style="background:radial-gradient(ellipse at 50% 30%,rgba(4,0,30,.98) 0%,rgba(0,0,0,1) 100%);">
+    <div style="font-family:'Fredoka One',cursive;font-size:clamp(28px,5vw,54px);background:linear-gradient(135deg,#ffd700,#fa0,#ffd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 28px rgba(255,215,0,.75));letter-spacing:3px;margin-bottom:4px;">🏆 LEADERBOARD</div>
+    <div style="font-size:11px;color:rgba(255,200,80,.4);letter-spacing:3px;margin-bottom:20px;">TOP 10 COSMIC PILOTS</div>
+    <div style="background:rgba(0,0,0,.5);border:1px solid rgba(255,215,0,.18);border-radius:22px;padding:18px 24px;max-width:480px;width:100%;max-height:420px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,215,0,.3) transparent;">
+      <div id="lbContent" style="width:100%;"></div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:16px;">
+      <button class="gbtn p" onclick="showModeSelect()">🚀 PLAY</button>
+      <button class="gbtn s" onclick="showMenu()">🏠 Menu</button>
+    </div>
   </div>
 
   <!-- ── RESULT / GAME OVER ── -->
@@ -1402,7 +1433,7 @@ const COSMO={
   reset(){const H=gc.height;this.x=140;this.y=H-230;this.dy=0;this.onGround=false;this.jumpsLeft=2;this.sqX=this.sqY=1;this.trail=[];this.glowHue=180;this.thrPh=0;this.shieldOn=this.boostOn=this.magnetOn=this.invOn=false;this.shieldT=this.boostT=this.magnetT=this.invT=0;this.eyeOpen=1;this.blinkT=rnd(80,180);this.rX=140;this.rY=H-230;},
   warpIn(){this.x=clp(this.rX||140,80,gc.width-80);this.y=-70;this.dy=9;this.onGround=false;this.jumpsLeft=2;this.invOn=true;this.invT=180;this.sqX=.7;this.sqY=1.45;},
   doJump(dbl){this.dy=dbl?-16.5:-20.5;this.sqX=1.42;this.sqY=0.62;PARTS.emit(this.x+this.w/2,this.y+this.h,9,dbl?C.purple:C.cyan,{s0:1,s1:3,l0:14,l1:30,sz0:2,sz1:5,grav:.1});if(dbl)PARTS.emit(this.x+this.w/2,this.y+this.h/2,12,C.purple,{s0:2,s1:5,l0:16,l1:26,sz0:1,sz1:4,mx:1.4,my:.5});},
-  land(){this.sqX=1.35;this.sqY=0.65;this.jumpsLeft=2;PARTS.emit(this.x+this.w/2,this.y+this.h,6,C.cyan,{s0:.5,s1:2,l0:10,l1:20,sz0:1,sz1:3,grav:.18});},
+  land(){this.sqX=1.35;this.sqY=0.65;this.jumpsLeft=2;AUDIO.land();PARTS.emit(this.x+this.w/2,this.y+this.h,6,C.cyan,{s0:.5,s1:2,l0:10,l1:20,sz0:1,sz1:3,grav:.18});},
   update(){
     const grav=this.boostOn?.34:.7;this.dy=Math.min(this.dy+grav,22);this.y+=this.dy;
     this.sqX=clp(lerp(this.sqX,1,.18),.62,1.5);this.sqY=clp(lerp(this.sqY,1,.18),.62,1.5);
@@ -1423,7 +1454,7 @@ const COSMO={
     if(!this.onGround){const jH=Math.max(4,20+9*Math.sin(this.thrPh));const jg=ctx.createLinearGradient(0,this.h*.48,0,this.h*.48+jH);jg.addColorStop(0,`hsl(${this.glowHue},100%,70%)`);jg.addColorStop(.7,`hsl(${(this.glowHue+38)%360},100%,56%)`);jg.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=jg;ctx.beginPath();ctx.moveTo(-5,this.h*.44);ctx.lineTo(5,this.h*.44);ctx.lineTo(3,this.h*.44+jH);ctx.lineTo(-3,this.h*.44+jH);ctx.closePath();ctx.fill();[-12,12].forEach(ox=>{const j2=Math.max(2,jH*.48);const jg2=ctx.createLinearGradient(ox,this.h*.35,ox,this.h*.35+j2);jg2.addColorStop(0,`hsl(${(this.glowHue+58)%360},100%,66%)`);jg2.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=jg2;ctx.beginPath();sell(ctx,ox,this.h*.37,3.5,j2,0,0,PI2);ctx.fill();});}
     if(this.shieldOn){const sr=Math.max(.5,this.w*.88*(clp(this.shieldT/300,0,1)*.3+.7));const shG=srgd(ctx,0,0,this.w*.38,0,0,sr);shG.addColorStop(0,'rgba(0,0,0,0)');shG.addColorStop(.6,'rgba(0,220,255,.08)');shG.addColorStop(1,'rgba(0,220,255,.44)');ctx.fillStyle=shG;ctx.beginPath();sarc(ctx,0,0,sr,0,PI2);ctx.fill();ctx.strokeStyle=`rgba(0,220,255,${.48+.28*Math.sin(frame*.14)})`;ctx.lineWidth=2.5;ctx.beginPath();sarc(ctx,0,0,sr,0,PI2);ctx.stroke();}
     const bc=this.shieldOn?[0,220,255]:this.boostOn?[255,145,0]:[clp(Math.round(127+127*Math.sin(frame*.038)),0,255),clp(Math.round(127+127*Math.sin(frame*.038+2.1)),0,255),clp(Math.round(127+127*Math.sin(frame*.038+4.2)),0,255)];
-    ctx.shadowColor=rgba(bc,.75);ctx.shadowBlur=16;
+    ctx.shadowColor=rgba(bc,.88);ctx.shadowBlur=22;
     const R=this.w*.46,bR=R*.72;const bodyG=srgd(ctx,-R*.24,-R*.28,R*.07,0,0,R);bodyG.addColorStop(0,'rgba(255,255,255,0.86)');bodyG.addColorStop(.22,rgba(bc,.94));bodyG.addColorStop(.68,rgba(bc.map(v=>Math.floor(v*.7)),.94));bodyG.addColorStop(1,rgba(bc.map(v=>Math.floor(v*.5)),1));
     ctx.fillStyle=bodyG;ctx.beginPath();ctx.moveTo(-R+bR,-R);ctx.lineTo(R-bR,-R);ctx.arcTo(R,-R,R,-R+bR,bR);ctx.lineTo(R,R-bR);ctx.arcTo(R,R,R-bR,R,bR);ctx.lineTo(-R+bR,R);ctx.arcTo(-R,R,-R,R-bR,bR);ctx.lineTo(-R,-R+bR);ctx.arcTo(-R,-R,-R+bR,-R,bR);ctx.closePath();ctx.fill();ctx.shadowBlur=0;
     ctx.fillStyle='rgba(255,255,255,0.26)';ctx.beginPath();sell(ctx,-R*.18,-R*.26,Math.max(.4,R*.31),Math.max(.4,R*.17),-0.38,0,PI2);ctx.fill();
@@ -1508,7 +1539,7 @@ function triggerWarp(dir){
   const col=dir<0?'#ff4422':'#44ffaa';
 
   CD.run(nums,col,dir<0?'DIMENSION FALL!':'PORTAL WARP!',()=>{
-    WARP.trigger(targetW,dir,()=>{
+    AUDIO.warp();WARP.trigger(targetW,dir,()=>{
       worldMode=nm;worldIdx=ni;
       BG.setWorld();updLvlBadge();
       _rebuildPlatforms();
@@ -1601,13 +1632,13 @@ function physics(){
     if(COSMO.x<p.x+p.w&&COSMO.x+COSMO.w>p.x&&COSMO.y+COSMO.h>=py&&COSMO.y+COSMO.h<=py+p.h+18&&COSMO.dy>=0){
       if(!COSMO.onGround)COSMO.land();COSMO.y=py-COSMO.h;COSMO.onGround=true;touched=true;COSMO.dy=0;
       COSMO.rX=clp(p.x+p.w/2-COSMO.w/2,80,W-COSMO.w-20);COSMO.rY=py;
-      if(p.type==='bounce'){COSMO.dy=-22;COSMO.onGround=false;PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,16,C.gold,{s0:1.5,s1:5.5,l0:20,l1:40,sz0:2,sz1:7,up:2.5,sh:'s'});floatTxt('BOING! 🌟',rgba(C.gold,1),COSMO.x+COSMO.w/2,COSMO.y-20);addSc(3);}
+      if(p.type==='bounce'){COSMO.dy=-22;COSMO.onGround=false;AUDIO.bounce();PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,16,C.gold,{s0:1.5,s1:5.5,l0:20,l1:40,sz0:2,sz1:7,up:2.5,sh:'s'});floatTxt('BOING! 🌟',rgba(C.gold,1),COSMO.x+COSMO.w/2,COSMO.y-20);addSc(3);}
       if(p.type==='crumble'&&!p.crumb)p.crumb=true;
     }
   });
   if(!touched)COSMO.onGround=false;
   // Gems
-  GS.gL.forEach(g=>{if(g.ok)return;const dx=COSMO.x+COSMO.w/2-g.x,dy=COSMO.y+COSMO.h/2-g.y;if(Math.sqrt(dx*dx+dy*dy)<COSMO.w*.6){g.ok=true;GS.gC++;GS.comboT=70;GS.combo=Math.min(GS.combo+1,8);GS.maxCombo=Math.max(GS.maxCombo,GS.combo);PARTS.emit(g.x,g.y,9,C.gold,{s0:1,s1:3.2,l0:16,l1:30,sz0:2,sz1:5,sh:'s'});if(worldMode==='bright'){const ww=curWorld();PARTS.eB(g.x,g.y,[ww.bgE[rndI(0,ww.bgE.length)]]);}addSc(GS.combo);if(GS.gC!==_lastGems){document.getElementById('gEl').textContent=GS.gC;_lastGems=GS.gC;}updCombo();}});
+  GS.gL.forEach(g=>{if(g.ok)return;const dx=COSMO.x+COSMO.w/2-g.x,dy=COSMO.y+COSMO.h/2-g.y;if(Math.sqrt(dx*dx+dy*dy)<COSMO.w*.6){g.ok=true;GS.gC++;GS.comboT=70;GS.combo=Math.min(GS.combo+1,8);GS.maxCombo=Math.max(GS.maxCombo,GS.combo);PARTS.emit(g.x,g.y,9,C.gold,{s0:1,s1:3.2,l0:16,l1:30,sz0:2,sz1:5,sh:'s'});AUDIO.gem();if(worldMode==='bright'){const ww=curWorld();PARTS.eB(g.x,g.y,[ww.bgE[rndI(0,ww.bgE.length)]]);}addSc(GS.combo);if(GS.gC!==_lastGems){document.getElementById('gEl').textContent=GS.gC;_lastGems=GS.gC;}updCombo();}});
   if(GS.comboT>0)GS.comboT--;else if(GS.combo>1){GS.combo=1;document.getElementById('comboPill').classList.remove('show');}
   // Power-ups
   GS.pU.forEach(p=>{if(p.ok)return;const dx=COSMO.x+COSMO.w/2-p.x,dy=COSMO.y+COSMO.h/2-p.y;if(Math.sqrt(dx*dx+dy*dy)<36){p.ok=true;applyPU(p.type,p.x,p.y);}});
@@ -1626,7 +1657,7 @@ function physics(){
     });
   }
   // Portal → warp UP
-  if(PORTAL.active&&PORTAL.hit(COSMO.x,COSMO.y,COSMO.w,COSMO.h)){PORTAL.reset();GS.portalSpawned=false;triggerWarp(+1);}
+  if(PORTAL.active&&PORTAL.hit(COSMO.x,COSMO.y,COSMO.w,COSMO.h)){PORTAL.reset();GS.portalSpawned=false;AUDIO.portal();triggerWarp(+1);}
   // Fall → warp DOWN
   if(COSMO.y>H+80)triggerWarp(-1);
   updatePBars();
@@ -1636,7 +1667,7 @@ function physics(){
 function addSc(n){GS.score+=n;if(GS.score!==_lastScore){document.getElementById('sEl').textContent=GS.score;_lastScore=GS.score;}if(GS.score>best){best=GS.score;localStorage.setItem('cosmoSSR',best);}}
 function updCombo(){const p=document.getElementById('comboPill');document.getElementById('cNum').textContent=GS.combo;if(GS.combo>1)p.classList.add('show');else p.classList.remove('show');}
 function syncHearts(){['h0','h1','h2'].forEach((id,i)=>{const el=document.getElementById(id);if(i<(GS?GS.hp:3)){el.classList.remove('dead');el.textContent='❤️';}else{el.classList.add('dead');el.textContent='🖤';}});}
-function applyPU(type,x,y){const cx=COSMO.x+COSMO.w/2,cy=COSMO.y+COSMO.h/2;const cfg=PUD[type];PARTS.burst(x,y,cfg.col);floatTxt(cfg.lbl,rgba(cfg.col,1),cx,cy-32);switch(type){case'shield':COSMO.shieldOn=true;COSMO.shieldT=300;break;case'boost':COSMO.boostOn=true;COSMO.boostT=300;break;case'magnet':COSMO.magnetOn=true;COSMO.magnetT=300;break;case'heart':if(GS.hp<GS.maxHp){GS.hp++;syncHearts();PARTS.emit(cx,cy,16,C.pink,{s0:1,s1:4,l0:26,l1:48,sz0:2,sz1:7,up:2.5});}else floatTxt('MAX LIVES!',rgba(C.pink,1),cx,cy-32);break;}}
+function applyPU(type,x,y){const cx=COSMO.x+COSMO.w/2,cy=COSMO.y+COSMO.h/2;const cfg=PUD[type];PARTS.burst(x,y,cfg.col);floatTxt(cfg.lbl,rgba(cfg.col,1),cx,cy-32);switch(type){case'shield':COSMO.shieldOn=true;COSMO.shieldT=300;AUDIO.shield();break;case'boost':COSMO.boostOn=true;COSMO.boostT=300;AUDIO.boost();break;case'magnet':COSMO.magnetOn=true;COSMO.magnetT=300;break;case'heart':if(GS.hp<GS.maxHp){GS.hp++;syncHearts();PARTS.emit(cx,cy,16,C.pink,{s0:1,s1:4,l0:26,l1:48,sz0:2,sz1:7,up:2.5});}else floatTxt('MAX LIVES!',rgba(C.pink,1),cx,cy-32);break;}}
 
 // ════════════════════════════════════════════════════════════════
 //  DRAW LOOP
@@ -1661,7 +1692,7 @@ function drawGame(){
 // ════════════════════════════════════════════════════════════════
 //  INPUT
 // ════════════════════════════════════════════════════════════════
-function doJump(){if(!gameRunning||!GS||dLock||paused)return;if(COSMO.jumpsLeft>0){const d=COSMO.jumpsLeft===1&&!COSMO.onGround;COSMO.doJump(d);COSMO.jumpsLeft--;if(d)floatTxt('DOUBLE! 🔥',rgba(C.purple,1),COSMO.x+COSMO.w/2,COSMO.y-20);}}
+function doJump(){if(!gameRunning||!GS||dLock||paused)return;AUDIO._r();if(COSMO.jumpsLeft>0){const d=COSMO.jumpsLeft===1&&!COSMO.onGround;if(d)AUDIO.doubleJump();else AUDIO.jump();COSMO.doJump(d);COSMO.jumpsLeft--;if(d)floatTxt('DOUBLE! 🔥',rgba(C.purple,1),COSMO.x+COSMO.w/2,COSMO.y-20);}}
 document.addEventListener('keydown',e=>{
   if(e.code==='Space'||e.code==='ArrowUp'||e.code==='KeyW'){e.preventDefault();doJump();}
   if(e.code==='KeyP'||e.code==='Escape'){if(gameRunning)togglePause();}
@@ -1674,19 +1705,25 @@ document.addEventListener('touchstart',e=>{e.preventDefault();doJump();},{passiv
 //  3 orbital rings at different angles & speeds with particles
 // ════════════════════════════════════════════════════════════════
 const RINGS=[
-  {angle:0,tilt:.3,speed:.038,particles:[]},
-  {angle:Math.PI*.55,tilt:.6,speed:-.026,particles:[]},
-  {angle:Math.PI*1.1,tilt:.22,speed:.018,particles:[]}
+  // inner fast ring — cyan
+  {angle:0,     tilt:.28, speed:.042, r_scale:1.0,  particles:[], dotSz:2.8, hueBase:0  },
+  // mid ring — purple, reverse
+  {angle:2.09,  tilt:.62, speed:-.03, r_scale:1.18, particles:[], dotSz:2.2, hueBase:120},
+  // outer slow ring — pink
+  {angle:4.18,  tilt:.18, speed:.02,  r_scale:1.36, particles:[], dotSz:2.0, hueBase:240},
+  // PLANET ring — large, flat, slow, no dots just glow arc
+  {angle:0,     tilt:.08, speed:.008, r_scale:1.72, particles:[], dotSz:0,   hueBase:60, planet:true},
 ];
 (function initRings(){
   RINGS.forEach((ring,ri)=>{
     ring.particles=[];
-    const n=ri===0?6:ri===1?5:4;
+    if(ring.planet)return;// planet ring has no dots
+    const n=[7,5,4,0][ri]||0;
     for(let i=0;i<n;i++){
       ring.particles.push({
-        t:i/n,// position along ring 0..1
-        sz:rnd(1.5,3.2),
-        hueOff:rndI(0,60),
+        t:i/n,
+        sz:ring.dotSz||rnd(1.5,3.2),
+        hueOff:rndI(0,55),
         trail:[]
       });
     }
@@ -1695,59 +1732,79 @@ const RINGS=[
 
 function drawProtonRings(){
   const cx=COSMO.x+COSMO.w/2,cy=COSMO.y+COSMO.h/2;
-  const R=Math.max(24,COSMO.w*.58);
+  const R=Math.max(24,COSMO.w*.56);
   const baseHue=COSMO.glowHue;
+  const inv=COSMO.invOn&&Math.floor(frame/4)%2===0;
 
   RINGS.forEach((ring,ri)=>{
     ring.angle+=ring.speed;
-    const rx=R*(1+ri*.08);
-    const ry=Math.max(4,rx*(.18+Math.abs(Math.sin(ring.tilt)*.55)));
+    const rx=R*ring.r_scale;
+    const ry=Math.max(3,rx*(.14+Math.abs(Math.sin(ring.tilt)*.48)));
+    const hue=(baseHue+ring.hueBase)%360;
 
-    // Draw ring arc (dashed/dotted glow)
-    ctx.save();
-    ctx.translate(cx,cy);
-    ctx.rotate(ring.angle);
+    ctx.save();ctx.translate(cx,cy);ctx.rotate(ring.angle);
 
-    const ringAlpha=COSMO.invOn&&Math.floor(frame/4)%2===0?0:.28+.12*Math.sin(frame*.04+ri);
-    ctx.strokeStyle=`hsla(${(baseHue+ri*45)%360},100%,70%,${ringAlpha})`;
-    ctx.lineWidth=1;
-    ctx.setLineDash([3,8]);
-    ctx.beginPath();
-    sell(ctx,0,0,rx,ry,0,0,PI2);
-    ctx.stroke();
+    if(ring.planet){
+      // ── PLANET-STYLE large glowing ring arc ──────────────────
+      if(!inv){
+        const pa=.18+.1*Math.sin(frame*.03);
+        // Outer glow
+        ctx.strokeStyle=`hsla(${hue},100%,68%,${pa*.5})`;
+        ctx.lineWidth=4;ctx.setLineDash([]);
+        ctx.beginPath();sell(ctx,0,0,rx,ry,0,0,PI2);ctx.stroke();
+        // Inner bright line
+        ctx.strokeStyle=`hsla(${hue},100%,88%,${pa})`;
+        ctx.lineWidth=1.5;
+        ctx.beginPath();sell(ctx,0,0,rx,ry,0,0,PI2);ctx.stroke();
+        // Glow dots at 0/180deg
+        [[0],[Math.PI]].forEach(([a])=>{
+          const ex=Math.cos(a)*rx,ey=Math.sin(a)*ry;
+          const cosA=Math.cos(ring.angle),sinA=Math.sin(ring.angle);
+          const wx2=ex*cosA-ey*sinA,wy2=ex*sinA+ey*cosA;
+          ctx.restore();ctx.save();ctx.translate(cx,cy);
+          ctx.shadowColor=`hsl(${hue},100%,70%)`;ctx.shadowBlur=10;
+          ctx.fillStyle=`hsl(${hue},100%,80%)`;
+          ctx.beginPath();sarc(ctx,wx2,wy2,3,0,PI2);ctx.fill();
+          ctx.shadowBlur=0;ctx.translate(-cx,-cy);
+        });
+      }
+      ctx.restore();
+      return;
+    }
+
+    // ── PARTICLE ring ─────────────────────────────────────────
+    const ra=inv?0:.22+.12*Math.sin(frame*.04+ri);
+    ctx.strokeStyle=`hsla(${hue},100%,72%,${ra})`;
+    ctx.lineWidth=ri===0?1.2:1;
+    ctx.setLineDash(ri===0?[4,9]:[2,7]);
+    ctx.beginPath();sell(ctx,0,0,rx,ry,0,0,PI2);ctx.stroke();
     ctx.setLineDash([]);
     ctx.restore();
 
-    // Draw particles on ring
+    if(inv)return;
     ring.particles.forEach(p=>{
-      p.t=(p.t+ring.speed*.018+.003)%1;
+      p.t=(p.t+Math.abs(ring.speed)*.016+.0025)%1;
       const a=p.t*PI2;
-      // Convert ellipse point to world coords (rotated by ring.angle)
       const ex=Math.cos(a)*rx,ey=Math.sin(a)*ry;
       const cosA=Math.cos(ring.angle),sinA=Math.sin(ring.angle);
-      const wx=cx+ex*cosA-ey*sinA;
-      const wy=cy+ex*sinA+ey*cosA;
+      const wx=cx+ex*cosA-ey*sinA,wy=cy+ex*sinA+ey*cosA;
 
       // Trail
       p.trail.push({x:wx,y:wy});
-      if(p.trail.length>8)p.trail.shift();
+      if(p.trail.length>9)p.trail.shift();
       for(let t=1;t<p.trail.length;t++){
         const tf=t/p.trail.length;
-        ctx.globalAlpha=clp(tf*.35,0,.35);
-        ctx.fillStyle=`hsl(${(baseHue+ri*45+p.hueOff)%360},100%,75%)`;
-        const ts=Math.max(.3,p.sz*tf*.6);
-        ctx.beginPath();sarc(ctx,p.trail[t].x,p.trail[t].y,ts,0,PI2);ctx.fill();
+        ctx.globalAlpha=clp(tf*.3,0,.3);
+        ctx.fillStyle=`hsl(${(hue+p.hueOff)%360},100%,78%)`;
+        ctx.beginPath();sarc(ctx,p.trail[t].x,p.trail[t].y,Math.max(.25,p.sz*tf*.55),0,PI2);ctx.fill();
       }
-
-      if(COSMO.invOn&&Math.floor(frame/4)%2===0){ctx.globalAlpha=1;return;}
       ctx.globalAlpha=1;
-      const hue=(baseHue+ri*45+p.hueOff)%360;
-      ctx.shadowColor=`hsl(${hue},100%,70%)`;ctx.shadowBlur=8;
-      ctx.fillStyle=`hsl(${hue},100%,78%)`;
+      const ph2=(hue+p.hueOff)%360;
+      ctx.shadowColor=`hsl(${ph2},100%,70%)`;ctx.shadowBlur=9;
+      ctx.fillStyle=`hsl(${ph2},100%,82%)`;
       ctx.beginPath();sarc(ctx,wx,wy,Math.max(.4,p.sz),0,PI2);ctx.fill();
-      // inner white dot
-      ctx.fillStyle='rgba(255,255,255,.8)';
-      ctx.beginPath();sarc(ctx,wx,wy,Math.max(.2,p.sz*.35),0,PI2);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,.85)';
+      ctx.beginPath();sarc(ctx,wx,wy,Math.max(.15,p.sz*.32),0,PI2);ctx.fill();
       ctx.shadowBlur=0;ctx.globalAlpha=1;
     });
   });
@@ -1825,7 +1882,7 @@ function buildCustomGrid(){
   customStartWorld={mode:ALL_WORLDS[0].mode,idx:ALL_WORLDS[0].idx};
 }
 
-function showModeSelect(){showScr('modeScr');}
+function showModeSelect(){AUDIO.click();showScr('modeScr');}
 function showStoryScreen(){showScr('storyScr');}
 function showCustomScreen(){buildCustomGrid();showScr('customScr');}
 
@@ -1920,12 +1977,13 @@ function showScr(id){
   document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
   document.getElementById(id).classList.add('on');
   document.getElementById('screens').style.display='flex';
-  // hide pause btn when not in game
   document.getElementById('pauseBtn').style.display='none';
+  const mb=document.getElementById('muteBtn');if(mb)mb.style.display='none';
 }
 function hideScrs(){
   document.getElementById('screens').style.display='none';
   document.getElementById('pauseBtn').style.display='block';
+  const mb=document.getElementById('muteBtn');if(mb)mb.style.display='flex';
 }
 
 function updateNamePreview(){
@@ -1936,7 +1994,7 @@ function updateNamePreview(){
 }
 
 function launchGame(){
-  const v=document.getElementById('nameInp').value.trim();
+  AUDIO.init();const v=document.getElementById('nameInp').value.trim();
   playerName=(v||'COSMO').substring(0,14).toUpperCase();
   if(pendingMode==='custom'){
     worldMode=customStartWorld.mode;worldIdx=customStartWorld.idx;
@@ -1947,7 +2005,7 @@ function launchGame(){
 }
 
 function showMenu(){
-  paused=false;
+  AUDIO.click();paused=false;
   document.getElementById('pauseOverlay').classList.remove('on');
   cancelAnimationFrame(RAF_game);
   gameRunning=false;
@@ -1969,7 +2027,7 @@ function bgLoop(){_bgFrame++;if(_bgFrame%2===0)BG.draw();RAF_bg=requestAnimation
 function gameLoop(){if(!gameRunning||paused)return;frame++;physics();drawGame();RAF_game=requestAnimationFrame(gameLoop);}
 
 function endGame(){
-  if(!GS)return;gameRunning=false;cancelAnimationFrame(RAF_game);dLock=false;WARP.active=false;
+  if(!GS)return;gameRunning=false;AUDIO.over();cancelAnimationFrame(RAF_game);dLock=false;WARP.active=false;
   PARTS.burst(COSMO.x+COSMO.w/2,clp(COSMO.y,10,gc.height*.88),C.pink);
   PARTS.eB(gc.width/2,gc.height*.32,['💔','😵','💫','⭐','🌀']);
   drawGame();
@@ -1979,7 +2037,8 @@ function endGame(){
   document.getElementById('fBest').textContent=best;
   document.getElementById('fWarps').textContent=GS.warps;
   document.getElementById('fLvl').textContent=w.tag;
-  document.getElementById('nbMsg').style.display=isNew?'block':'none';
+  document.getElementById('nbMsg').style.display=isNew?'block':'none';if(isNew)setTimeout(()=>AUDIO.record(),400);
+  lbSubmit(playerName,sc,GS.gC,curWorld().tag+' '+curWorld().name);
 
   // Result card
   buildResultCard(sc,playerName);
@@ -2010,6 +2069,172 @@ function endGame(){
 }
 
 // ── BOOT ───────────────────────────────────────────────────────
+
+// ════════════════════════════════════════════════════════════════
+//  IN-GAME LEADERBOARD — localStorage based, top 10
+// ════════════════════════════════════════════════════════════════
+const LB_KEY='cosmoLB_v1';
+
+function lbGet(){try{return JSON.parse(localStorage.getItem(LB_KEY)||'[]');}catch(e){return[];}}
+function lbSave(arr){localStorage.setItem(LB_KEY,JSON.stringify(arr));}
+
+function lbSubmit(name,score,gems,world){
+  const arr=lbGet();
+  arr.push({name,score,gems,world,date:new Date().toLocaleDateString()});
+  arr.sort((a,b)=>b.score-a.score);
+  lbSave(arr.slice(0,10));
+}
+
+function lbBuildHTML(){
+  const arr=lbGet();
+  if(arr.length===0)return'<div style="color:rgba(255,255,255,.3);font-size:13px;padding:20px 0">No scores yet — be the first pilot! 🚀</div>';
+  const medals=['🥇','🥈','🥉'];
+  return arr.map((r,i)=>{
+    const m=medals[i]||(i+1)+'.';
+    return `<div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+      <div style="font-size:${i<3?'20':'13'}px;min-width:28px;text-align:center;">${m}</div>
+      <div style="flex:1;text-align:left;">
+        <div style="font-family:'Fredoka One',cursive;font-size:14px;color:#fff;">${r.name}</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.3);">${r.world} · ${r.date}</div>
+      </div>
+      <div style="font-family:'Fredoka One',cursive;font-size:18px;color:#ffd700;text-shadow:0 0 8px rgba(255,200,0,.5);">${r.score}</div>
+      <div style="font-size:11px;color:rgba(80,220,255,.7);">💎${r.gems}</div>
+    </div>`;
+  }).join('');
+}
+
+function showLeaderboard(){
+  document.getElementById('lbContent').innerHTML=lbBuildHTML();
+  showScr('lbScr');
+}
+
+
+// ════════════════════════════════════════════════════════════════
+//  AUDIO — Futuristic Mario-from-Future Sound System
+//  Pure Web Audio API, no files needed
+// ════════════════════════════════════════════════════════════════
+const AUDIO={
+  ctx:null,muted:false,
+
+  init(){
+    if(this.ctx)return;
+    try{this.ctx=new(window.AudioContext||window.webkitAudioContext)();}
+    catch(e){console.warn('[Audio] Not supported');}
+  },
+
+  _r(){if(this.ctx&&this.ctx.state==='suspended')this.ctx.resume();},
+
+  _osc(freq,type,dur,vol,delay=0,detune=0){
+    if(!this.ctx||this.muted)return;this._r();
+    const o=this.ctx.createOscillator();
+    const g=this.ctx.createGain();
+    const dist=this.ctx.createWaveShaper();
+    // soft distortion for "electric" feel
+    const n=256;const curve=new Float32Array(n);
+    for(let i=0;i<n;i++){const x=i*2/n-1;curve[i]=x*1.2;}
+    dist.curve=curve;
+    o.connect(dist);dist.connect(g);g.connect(this.ctx.destination);
+    o.type=type;o.frequency.setValueAtTime(freq,this.ctx.currentTime+delay);
+    if(detune)o.detune.setValueAtTime(detune,this.ctx.currentTime+delay);
+    g.gain.setValueAtTime(0,this.ctx.currentTime+delay);
+    g.gain.linearRampToValueAtTime(vol,this.ctx.currentTime+delay+.01);
+    g.gain.exponentialRampToValueAtTime(.0001,this.ctx.currentTime+delay+dur);
+    o.start(this.ctx.currentTime+delay);
+    o.stop(this.ctx.currentTime+delay+dur+.05);
+  },
+
+  _noise(dur,vol,delay=0){
+    if(!this.ctx||this.muted)return;this._r();
+    const buf=this.ctx.createBuffer(1,Math.floor(this.ctx.sampleRate*dur),this.ctx.sampleRate);
+    const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+    const src=this.ctx.createBufferSource();src.buffer=buf;
+    const g=this.ctx.createGain();const f=this.ctx.createBiquadFilter();
+    f.type='bandpass';f.frequency.value=800;f.Q.value=0.5;
+    src.connect(f);f.connect(g);g.connect(this.ctx.destination);
+    g.gain.setValueAtTime(0,this.ctx.currentTime+delay);
+    g.gain.linearRampToValueAtTime(vol,this.ctx.currentTime+delay+.005);
+    g.gain.exponentialRampToValueAtTime(.0001,this.ctx.currentTime+delay+dur);
+    src.start(this.ctx.currentTime+delay);src.stop(this.ctx.currentTime+delay+dur+.05);
+  },
+
+  // Jump — classic Mario-style ascending arpeggio, futuristic sawtooth
+  jump(){
+    [[0,420,'sawtooth',.14],[.05,560,'square',.12],[.1,700,'triangle',.1]].forEach(([d,f,t,v])=>this._osc(f,t,.14,v,d));
+  },
+
+  // Double jump — sparkly ascending chord burst
+  doubleJump(){
+    [[0,620,'triangle',.18,120],[.04,840,'triangle',.14,0],[.08,1040,'sine',.12,-60],[.12,1320,'sine',.1,0]].forEach(([d,f,t,v,det])=>this._osc(f,t,.16,v,d,det));
+  },
+
+  // Gem collect — bright chime sequence (Mario coin evolved)
+  gem(){
+    [[0,1200,'sine',.2],[.07,1600,'sine',.18],[.13,2000,'sine',.15]].forEach(([d,f,t,v])=>this._osc(f,t,.1,v,d));
+  },
+
+  // Hit — deep impact thud + crunch
+  hit(){
+    this._osc(55,'sawtooth',.22,.3);
+    this._osc(110,'square',.18,.22,.03);
+    this._noise(.15,.25,.01);
+  },
+
+  // Warp — deep woosh that rises & shimmers
+  warp(){
+    [[0,80,'sawtooth',.25],[.06,160,'triangle',.2],[.12,240,'sine',.18],[.18,380,'sine',.15],[.24,520,'triangle',.12]].forEach(([d,f,t,v])=>this._osc(f,t,.5,v,d));
+    this._noise(.3,.1,.02);
+  },
+
+  // Portal enter — shimmering ascending arpeggio
+  portal(){
+    [220,330,440,550,660,880].forEach((f,i)=>this._osc(f,'triangle',.2,.15,i*.06));
+  },
+
+  // Boost power-up — rising electric sweep
+  boost(){
+    [[0,180,'sawtooth',.2],[.08,360,'square',.18],[.16,540,'triangle',.15],[.22,720,'sine',.12]].forEach(([d,f,t,v])=>this._osc(f,t,.25,v,d));
+  },
+
+  // Bounce platform — boing!
+  bounce(){
+    [[0,280,'sine',.22],[.02,420,'triangle',.2],[.04,560,'sine',.18],[.08,840,'sine',.14]].forEach(([d,f,t,v])=>this._osc(f,t,.18,v,d));
+  },
+
+  // Combo — ascending jingle per level
+  combo(n){
+    const base=[440,528,660,880,1100,1320,1540,1760][clp(n-1,0,7)];
+    this._osc(base,'triangle',.14,.18);
+    this._osc(base*1.5,'sine',.1,.12,.06);
+  },
+
+  // Landing
+  land(){this._osc(120,'triangle',.1,.12);this._noise(.04,.1,.01);},
+
+  // Shield
+  shield(){
+    [[0,260,'triangle',.16],[.05,390,'sine',.14],[.1,520,'triangle',.12]].forEach(([d,f,t,v])=>this._osc(f,t,.2,v,d));
+  },
+
+  // Game over — sad descending
+  over(){
+    [[0,440,'sawtooth',.22],[.15,330,'sawtooth',.2],[.3,220,'square',.18],[.5,110,'sawtooth',.15]].forEach(([d,f,t,v])=>this._osc(f,t,.35,v,d));
+  },
+
+  // Menu confirm / click
+  click(){this._osc(660,'sine',.06,.14);this._osc(880,'triangle',.04,.1,.04);},
+
+  // New record
+  record(){
+    [0,1,2,3,4].forEach(i=>this._osc(440*Math.pow(1.2,i),'triangle',.18,.16,i*.08));
+  }
+};
+
+function toggleMute(){
+  AUDIO.muted=!AUDIO.muted;
+  const btn=document.getElementById('muteBtn');
+  if(btn)btn.textContent=AUDIO.muted?'🔇':'🔊';
+}
+
 BG.init();bgLoop();showScr('mScr');initMenuStars();
 </script>
 </body>
