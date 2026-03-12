@@ -18,8 +18,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 /* ── HUD ── */
 #ui{position:absolute;top:0;left:0;right:0;z-index:5;padding:10px 16px;
   display:flex;align-items:center;justify-content:space-between;pointer-events:none;}
-.pill{background:rgba(0,0,0,0.6);border:1.5px solid rgba(255,255,255,0.14);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+.pill{background:rgba(0,0,0,0.7);border:1.5px solid rgba(255,255,255,0.14);
   border-radius:50px;padding:7px 16px;display:flex;align-items:center;gap:7px;}
 .pico{font-size:16px;line-height:1;}
 .plabel{font-family:'Fredoka One',cursive;font-size:8px;color:rgba(255,255,255,0.38);
@@ -44,7 +43,6 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   transform:translateX(-50%) scale(0) translateY(-6px);
   background:rgba(0,0,0,0.72);
   border:1.5px solid rgba(255,215,0,0.45);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   border-radius:50px;
   padding:4px 14px 4px 10px;
   display:flex;align-items:center;gap:5px;
@@ -195,8 +193,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   margin-bottom:8px;}
 .goSlabel{font-family:'Fredoka One',cursive;font-size:12px;color:rgba(255,255,255,.35);
   letter-spacing:3px;margin-bottom:4px;}
-.goSval{font-family:'Fredoka One',cursive;font-size:48px;color:#fff;
-  text-shadow:0 0 12px cyan,0 0 30px rgba(100,200,255,.9);margin-bottom:16px;}
+
 .statsRow{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;justify-content:center;}
 .stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
   border-radius:12px;padding:9px 16px;}
@@ -257,14 +254,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 @keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
 
 /* Score number count-up animation */
-.goSval{
-  font-family:'Fredoka One',cursive;
-  font-size:clamp(52px,12vw,90px);
-  background:linear-gradient(135deg,#ffffff,#a0d8ff,#60c0ff);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 18px rgba(100,200,255,.55)) drop-shadow(0 0 40px rgba(80,180,255,.3));
-  line-height:1;margin:4px 0;
-}
+
 /* Stat cards in game over */
 .statsRow{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;justify-content:center;}
 .stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
@@ -567,14 +557,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 @keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
 
 /* Score number count-up animation */
-.goSval{
-  font-family:'Fredoka One',cursive;
-  font-size:clamp(52px,12vw,90px);
-  background:linear-gradient(135deg,#ffffff,#a0d8ff,#60c0ff);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 18px rgba(100,200,255,.55)) drop-shadow(0 0 40px rgba(80,180,255,.3));
-  line-height:1;margin:4px 0;
-}
+
 /* Stat cards in game over */
 .statsRow{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;justify-content:center;}
 .stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
@@ -755,9 +738,8 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   #journeyBar{width:clamp(180px,86vw,340px);}
 }
 .jbar-inner{
-  background:rgba(0,0,12,.78);border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,12,.92);border:1px solid rgba(255,255,255,.12);
   border-radius:16px;padding:5px 12px 7px;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   display:flex;flex-direction:column;gap:3px;
   box-shadow:0 2px 16px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);
 }
@@ -866,10 +848,8 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 #streakBadge.on{opacity:1;}
 
 /* ══ IMPROVED RESULT SCREEN ══ */
-.goSval{font-family:'Fredoka One',cursive;font-size:clamp(42px,8vw,72px);color:#fff;
-  text-shadow:0 0 20px cyan,0 0 50px rgba(100,200,255,.9),0 0 90px rgba(60,180,255,.4);
-  margin-bottom:16px;animation:scoreGlow 2s ease-in-out infinite;}
-@keyframes scoreGlow{0%,100%{text-shadow:0 0 20px cyan,0 0 50px rgba(100,200,255,.9);}
+
+
   50%{text-shadow:0 0 30px #0ff,0 0 80px rgba(100,200,255,1),0 0 120px rgba(60,180,255,.6);}}
 .newBest{font-family:'Fredoka One',cursive;font-size:15px;
   background:linear-gradient(135deg,#ffd700,#ff8c00,#ffd700);
@@ -938,6 +918,37 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   width:16px;height:16px;border-radius:50%;
   background:rgba(80,200,255,1);border:2px solid #fff;cursor:pointer;
 }
+
+@keyframes crownFloat{0%,100%{transform:translateY(0) rotate(-6deg);}50%{transform:translateY(-8px) rotate(6deg);}}
+
+/* ══ SCORE DISPLAY — single authoritative definition ══ */
+.goSval{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(64px,14vw,100px);
+  color:#fff;
+  line-height:1;
+  margin:4px 0 12px;
+  letter-spacing:2px;
+  /* NO background-clip, NO gradient here — tiers handle color */
+}
+
+/* ══ SCORE COLOUR TIERS — simple color + glow, no gradient-clip box bug ══ */
+.score-tier-crash  { color:#ff4455 !important; text-shadow:0 0 22px rgba(255,60,60,.9),0 0 55px rgba(255,0,0,.4) !important; }
+.score-tier-low    { color:#ff7733 !important; text-shadow:0 0 22px rgba(255,110,40,.9),0 0 55px rgba(255,80,0,.4) !important; }
+.score-tier-mid    { color:#ffdd00 !important; text-shadow:0 0 22px rgba(255,220,0,.9),0 0 55px rgba(255,180,0,.4) !important; }
+.score-tier-good   { color:#44ffcc !important; text-shadow:0 0 22px rgba(60,255,200,.9),0 0 55px rgba(0,220,160,.4) !important; }
+.score-tier-great  { color:#55ccff !important; text-shadow:0 0 26px rgba(80,200,255,1),0 0 65px rgba(40,160,255,.5) !important; }
+.score-tier-legend { color:#ffffff !important; text-shadow:0 0 30px rgba(180,180,255,1),0 0 70px rgba(120,100,255,.7),0 0 120px rgba(80,80,255,.4) !important;
+  animation:legendPulse 1.6s ease-in-out infinite !important; }
+@keyframes legendPulse{0%,100%{text-shadow:0 0 28px rgba(180,180,255,1),0 0 65px rgba(120,100,255,.6);}
+  50%{text-shadow:0 0 50px rgba(220,200,255,1),0 0 100px rgba(160,130,255,.8),0 0 160px rgba(100,80,255,.4);}}
+
+/* Crown above score */
+#scoreCrown{font-size:clamp(24px,5vw,36px);display:none;margin-bottom:2px;
+  animation:crownFloat 1.4s ease-in-out infinite;}
+@keyframes crownFloat{0%,100%{transform:translateY(0) rotate(-6deg) scale(1);}
+  50%{transform:translateY(-9px) rotate(6deg) scale(1.12);}}
+
 </style>
 </head>
 <body>
@@ -1054,7 +1065,8 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
         <div style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.8;">
           🔴 <b>Spike</b> — Avoid! Cannot stomp<br>
           🌑 <b>Asteroid</b> — Avoid! Cannot stomp<br>
-          👾 <b>Alien Goomba</b> — Jump ON TOP to defeat!<br>
+          👾 <b>Alien Goomba</b> — Jump ON TOP to defeat! +25pts<br>
+          👑 <b>PERFECT stomp</b> — Land on the very tip = <b style="color:#ffd700">+50 DOUBLE BONUS!</b><br>
           💫 <b>Comet/Ghost/Robot</b> — Stomp to defeat<br>
           🌊 <b>Fall off screen</b> — Lose 1 life, warp worlds
         </div>
@@ -1134,6 +1146,16 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   <div class="scr on" id="mScr">
     <canvas id="menuStars" style="position:absolute;inset:0;z-index:0;pointer-events:none;"></canvas>
     <div id="menuParticles"></div>
+    <!-- Menu Sound Toggle — top-right corner -->
+    <div id="menuSoundBtn" onclick="toggleMenuSound()" style="position:absolute;top:14px;right:16px;z-index:10;cursor:pointer;
+      background:rgba(0,0,0,0.55);border:1.5px solid rgba(255,255,255,0.18);
+      border-radius:50px;padding:8px 16px;display:flex;align-items:center;gap:7px;
+      font-family:'Fredoka One',cursive;font-size:13px;color:rgba(255,255,255,.8);
+      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      transition:all .2s;letter-spacing:1px;user-select:none;">
+      <span id="menuSoundIcon">🔊</span>
+      <span id="menuSoundLabel">SOUND ON</span>
+    </div>
     <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;padding:8px 12px;">
       <div style="position:relative;margin-bottom:2px;">
         <div class="galaxy-river"></div>
@@ -1326,6 +1348,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
     <div id="rStatement" style="font-size:clamp(11px,2vw,15px);color:rgba(255,255,255,.5);letter-spacing:1px;margin-bottom:6px;font-style:italic;max-width:320px;line-height:1.5;text-align:center;">Better luck next time!</div>
     <div class="go-playername" id="goPlayerName" style="color:#6df">COSMO</div>
     <div class="goSlabel">SCORE</div>
+    <div id="scoreCrown">👑</div>
     <div class="goSval" id="fScore">0</div>
     <div class="statsRow">
       <div class="stat"><div class="stat-l">World</div><div class="stat-v" id="fLvl">☀️</div></div>
@@ -2310,7 +2333,8 @@ const PARTS={pool:[],
     }
   },
   draw(){
-    // Cull dead early
+    // Cull dead early — also hard cap pool to prevent lag spikes
+    if(this.pool.length>220)this.pool.splice(0,this.pool.length-220);
     const alive=[];
     for(let i=0;i<this.pool.length;i++){
       const p=this.pool[i];p.x+=p.dx;p.y+=p.dy;p.dy+=p.grav;p.dx*=.97;p.life--;
@@ -2713,19 +2737,32 @@ function drawHaz(h){
 }
 
 // ── Mario-style stomp: jump on top of goomba/comet/debris/darkCloud ──
+// DOUBLE BONUS: landing exactly on the peak (top 8px) = 2× points
 function checkEnemyStomp(){
   if(!COSMO||!GS||COSMO.invOn||COSMO.dy<=0)return;
   GS.haz.forEach(h=>{
     if(!h.on||h.stompAnim||h.type==='spike'||h.type==='asteroid')return;
     const hW=h.type==='goomba'?16:h.type==='comet'?14:h.type==='debris'?18:22;
     const hTop=h.y-(h.type==='goomba'?26:h.type==='comet'?14:h.type==='debris'?12:24);
+    const cosmoBottom=COSMO.y+COSMO.h;
     if(COSMO.x+COSMO.w-6>h.x-hW && COSMO.x+6<h.x+hW
-      && COSMO.y+COSMO.h>=hTop && COSMO.y+COSMO.h<=hTop+16){
+      && cosmoBottom>=hTop && cosmoBottom<=hTop+16){
       h.on=false;h.stompAnim=18;
       COSMO.dy=-15;
-      addSc(25);
-      PARTS.burst(h.x,h.y,C.gold);
-      floatTxt('STOMP! +25',rgba(C.gold,1),h.x,h.y-32);
+      // PERFECT stomp = land within top 8px of hurdle crown → double bonus!
+      const isPerfect = cosmoBottom<=hTop+8;
+      const pts = isPerfect ? 50 : 25;
+      addSc(pts);
+      PARTS.burst(h.x,h.y,isPerfect?C.gold:C.cyan);
+      if(isPerfect){
+        // Extra star burst + special message
+        PARTS.emit(h.x,h.y,18,C.gold,{s0:2,s1:7,l0:22,l1:45,sz0:2,sz1:6,up:2.5,sh:'s'});
+        floatTxt('👑 PERFECT! +50',rgba(C.gold,1),h.x,h.y-42);
+        // Crown sparkle particles
+        PARTS.emit(h.x,h.y-20,10,[255,220,0],{s0:1,s1:4,l0:18,l1:35,sz0:1,sz1:4,grav:.05});
+      } else {
+        floatTxt('STOMP! +25',rgba(C.gold,1),h.x,h.y-32);
+      }
       AUDIO.bounce();
     }
   });
@@ -2850,7 +2887,7 @@ function updatePBars(){
 }
 
 // ── TUTORIAL ───────────────────────────────────────────────────
-const TIPS=[{i:'🚀',t:'TAP or SPACE to Jump!',at:0},{i:'🔁',t:'Double-tap = Double Jump!',at:4},{i:'💀',t:'Skulls & ⚡ bolts are DANGER zones!',at:8},{i:'🌀',t:'Portal warps to next world!',at:14},{i:'🌑',t:'Fall = dimension warp (costs 1 life)',at:22},{i:'💎',t:'Chain gems to build your Combo!',at:32}];
+const TIPS=[{i:'🚀',t:'TAP or SPACE to Jump!',at:0},{i:'🔁',t:'Double-tap = Double Jump!',at:4},{i:'💀',t:'Skulls & ⚡ bolts are DANGER zones!',at:8},{i:'🌀',t:'Portal warps to next world!',at:14},{i:'🌑',t:'Fall = dimension warp (costs 1 life)',at:22},{i:'💎',t:'Chain gems to build your Combo!',at:32},{i:'👑',t:'PERFECT stomp on tip of enemy = DOUBLE BONUS +50!',at:45}];
 let tipI=0,tipT=0;
 const tutEl=document.getElementById('tut');
 function tickTips(score){if(tipT>0){tipT--;if(tipT===0)tutEl.style.opacity='0';}if(tipI<TIPS.length&&score>=TIPS[tipI].at){const t=TIPS[tipI];document.getElementById('tIcon').textContent=t.i;document.getElementById('tText').textContent=t.t;tutEl.style.opacity='1';tipT=200;tipI++;}}
@@ -3039,6 +3076,11 @@ function initGame(){
   document.getElementById('countdown').style.opacity='0';
   document.getElementById('tut').style.opacity='0';
   document.getElementById('powerBars').innerHTML='';
+  // Reset score display state
+  const _fs=document.getElementById('fScore');
+  if(_fs){_fs.className='goSval';_fs.textContent='0';}
+  const _sc=document.getElementById('scoreCrown');
+  if(_sc)_sc.style.display='none';
   // Reset streak + diff badge
   gemStreak=0;streakTimer=0;
   const sb2=document.getElementById('streakBadge');if(sb2)sb2.classList.remove('on');
@@ -3935,10 +3977,23 @@ function endGame(silent=false){
   drawGame();
   const sc=GS.score,isNew=sc>0&&sc>=best;const w=curWorld();
   _setResultGrade(sc,GS.gC,GS.warps);
-  // Count-up animation for score
+  // Count-up animation for score with colour tiers
   (function countUp(){
     const el=document.getElementById('fScore');
+    const crown=document.getElementById('scoreCrown');
     if(!el)return;
+    // Apply score colour tier
+    const tiers=[
+      {min:0,  max:9,   cls:'score-tier-crash', showCrown:false},
+      {min:10, max:29,  cls:'score-tier-low',   showCrown:false},
+      {min:30, max:59,  cls:'score-tier-mid',   showCrown:false},
+      {min:60, max:99,  cls:'score-tier-good',  showCrown:false},
+      {min:100,max:149, cls:'score-tier-great', showCrown:true},
+      {min:150,max:Infinity,cls:'score-tier-legend',showCrown:true},
+    ];
+    const tier=tiers.find(t=>sc>=t.min&&sc<=t.max)||tiers[0];
+    el.className='goSval '+tier.cls;
+    if(crown){crown.style.display=tier.showCrown?'block':'none';}
     let cur=0;const target=sc;const dur=900;const step=16;
     const inc=Math.max(1,Math.ceil(target/(dur/step)));
     const t=setInterval(()=>{
@@ -4416,6 +4471,11 @@ function syncMuteUI(){
   if(side)side.textContent=AUDIO.muted?'🔇':'🔊';
   const pBtn=document.getElementById('pauseSoundBtn');
   if(pBtn)pBtn.textContent=AUDIO.muted?'🔇 SOUND OFF':'🔊 SOUND ON';
+  // Keep menu sound button in sync
+  const mIcon=document.getElementById('menuSoundIcon');
+  const mLbl=document.getElementById('menuSoundLabel');
+  if(mIcon)mIcon.textContent=AUDIO.muted?'🔇':'🔊';
+  if(mLbl)mLbl.textContent=AUDIO.muted?'SOUND OFF':'SOUND ON';
   // Sync slider display
   const sliderVal=AUDIO.muted?0:Math.round(AUDIO.volume*100);
   ['pauseVolSlider'].forEach(id=>{
@@ -4424,6 +4484,35 @@ function syncMuteUI(){
   });
   const pct=document.getElementById('pauseVolPct');
   if(pct)pct.textContent=sliderVal+'%';
+}
+
+function toggleMenuSound(){
+  // Toggle mute and update all UI including the menu sound button
+  AUDIO.muted=!AUDIO.muted;
+  if(AUDIO.ctx&&AUDIO.masterGain){
+    AUDIO.masterGain.gain.setTargetAtTime(AUDIO.muted?0:AUDIO.volume,AUDIO.ctx.currentTime,.05);
+  }
+  if(AUDIO.muted){
+    AUDIO.stopMusic();
+    if(typeof AMBIENT!=='undefined')AMBIENT.stop();
+  } else {
+    // Restart ambient for current screen
+    if(typeof AMBIENT!=='undefined'){
+      const active=document.querySelector('.scr.on');
+      if(active&&(active.id==='mScr'||active.id==='modeScr')){
+        AUDIO.init();
+        const c=AUDIO.ctx;
+        if(c&&c.state==='suspended'){c.resume().then(()=>AMBIENT.start('menu'));}
+        else AMBIENT.start('menu');
+      }
+    }
+  }
+  syncMuteUI();
+  // Update menu-specific button
+  const icon=document.getElementById('menuSoundIcon');
+  const lbl=document.getElementById('menuSoundLabel');
+  if(icon)icon.textContent=AUDIO.muted?'🔇':'🔊';
+  if(lbl)lbl.textContent=AUDIO.muted?'SOUND OFF':'SOUND ON';
 }
 
 function toggleMute(){
@@ -4459,6 +4548,8 @@ const AMBIENT={
 
   // Build a soothing layered ambient pad
   start(mode='menu'){
+    // Normalize extended mode names → base modes for pad selection
+    if(mode==='triumph'||mode==='gentle'||mode==='melancholy')mode='score';
     if(!this._ensureCtx()) return;
     this.stop();
     if(AUDIO.muted) return;
@@ -4470,7 +4561,7 @@ const AMBIENT={
     const vol=AUDIO.muted?0:AUDIO.volume;
 
     // ── 1. Deep cosmic drone — slow sine wobble ──────────────────
-    const droneFreqs=mode==='score'?[55,82.5,110]:[40,60,80];
+    const droneFreqs=mode==='score'?[55,110]:[40,80]; // 2 drones max for perf
     droneFreqs.forEach((f,i)=>{
       const o=c.createOscillator();
       const g=c.createGain();
@@ -4489,7 +4580,7 @@ const AMBIENT={
     });
 
     // ── 2. Shimmering star pad — detuned triangle cluster ────────
-    const padFreqs=mode==='score'?[329,415,523,659]:[261,330,392,523];
+    const padFreqs=mode==='score'?[415,523,659]:[330,392,523]; // 3 pads for perf
     padFreqs.forEach((f,i)=>{
       const o=c.createOscillator();
       const g=c.createGain();
@@ -4551,6 +4642,7 @@ const AMBIENT={
   stop(){
     this._active=false;
     clearTimeout(this._bellTimeout);
+    clearTimeout(this._arpTimeout);
     if(this.ctx){
       const now=this.ctx.currentTime;
       this.nodes.forEach(n=>{
@@ -4604,6 +4696,12 @@ const AMBIENT={
 // the first tap/click/key and then start the menu ambient.
 (function(){
   let _ambientStarted = false;
+  // Hover polish for menu sound button
+  const _msb=document.getElementById('menuSoundBtn');
+  if(_msb){
+    _msb.addEventListener('mouseenter',()=>{_msb.style.background='rgba(255,255,255,0.12)';_msb.style.borderColor='rgba(255,255,255,0.38)';});
+    _msb.addEventListener('mouseleave',()=>{_msb.style.background='rgba(0,0,0,0.55)';_msb.style.borderColor='rgba(255,255,255,0.18)';});
+  }
   function _tryStartMenuAmbient(){
     if(_ambientStarted) return;
     // Only start if we're on a menu screen (not in-game)
