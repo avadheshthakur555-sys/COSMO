@@ -227,6 +227,59 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 .gtitle-orbit{position:absolute;inset:-18px;border-radius:50%;border:1px solid rgba(80,200,255,.18);animation:orbitSpin 8s linear infinite;}
 .gtitle-orbit::after{content:'✦';position:absolute;top:50%;left:0;transform:translate(-50%,-50%);color:rgba(80,200,255,.7);font-size:10px;}
 @keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ── MENU FLOATING STARS particle effect ── */
+#menuParticles{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.mstar{position:absolute;border-radius:50%;animation:mStarFloat linear infinite;}
+@keyframes mStarFloat{0%{opacity:0;transform:translateY(0) scale(0);}10%{opacity:1;}80%{opacity:.7;}100%{opacity:0;transform:translateY(-60vh) scale(.4);}}
+
+/* ── SCORE PAGE enhancements ── */
+#goScr .score-ring{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:0;
+  border:1.5px solid rgba(100,180,255,.12);
+  animation:scoreRingPulse 3s ease-in-out infinite;
+}
+#goScr .score-ring:nth-child(2){width:380px;height:380px;animation-delay:.8s;border-color:rgba(80,140,255,.07);}
+@keyframes scoreRingPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6;}50%{transform:translate(-50%,-50%) scale(1.08);opacity:1;}}
+
+/* New Best Record flash */
+.newBest{
+  font-family:'Fredoka One',cursive;font-size:clamp(14px,3vw,22px);
+  background:linear-gradient(90deg,#ffd700,#ff8c00,#ffd700);
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:goldShimmer 1.4s linear infinite,recordPop .5s cubic-bezier(.34,1.56,.64,1) both;
+  filter:drop-shadow(0 0 14px rgba(255,200,0,.65));
+  margin:6px 0;
+}
+@keyframes goldShimmer{0%{background-position:0%;}100%{background-position:200%;}}
+@keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
+
+/* Score number count-up animation */
+.goSval{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(52px,12vw,90px);
+  background:linear-gradient(135deg,#ffffff,#a0d8ff,#60c0ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 18px rgba(100,200,255,.55)) drop-shadow(0 0 40px rgba(80,180,255,.3));
+  line-height:1;margin:4px 0;
+}
+/* Stat cards in game over */
+.statsRow{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;justify-content:center;}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:8px 16px;min-width:72px;text-align:center;
+  transition:transform .2s;backdrop-filter:blur(6px);}
+.stat:hover{transform:scale(1.05);}
+.stat-l{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.stat-v{font-family:'Fredoka One',cursive;font-size:22px;color:#fff;text-shadow:0 0 10px rgba(120,200,255,.6);}
+
+/* Journey trail */
+.journey-txt{font-size:10px;color:rgba(180,200,255,.45);letter-spacing:1px;margin:4px 0 8px;max-width:340px;text-align:center;line-height:1.6;}
+
+/* Confetti particles on new best */
+@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
+.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;animation:confettiFall linear forwards;border-radius:2px;pointer-events:none;z-index:20;}
 .gtitle{font-family:'Fredoka One',cursive;font-size:clamp(48px,9vw,108px);background:linear-gradient(135deg,#fff 0%,#b0efff 18%,#60dfff 45%,#ffe89a 75%,#ffd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 52px rgba(60,200,255,.95)) drop-shadow(0 0 20px rgba(255,215,0,.55));animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
 .gsub{font-family:'Fredoka One',cursive;font-size:14px;color:rgba(185,220,255,.5);letter-spacing:6px;margin-bottom:12px;}
 .bestLbl{font-family:'Fredoka One',cursive;font-size:13px;background:rgba(0,0,0,.5);border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:6px 20px;color:rgba(255,215,80,.9);letter-spacing:2px;margin-bottom:14px;box-shadow:0 0 18px rgba(255,200,0,.12);}
@@ -484,6 +537,59 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
 @keyframes tBnc{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
 @keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ── MENU FLOATING STARS particle effect ── */
+#menuParticles{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.mstar{position:absolute;border-radius:50%;animation:mStarFloat linear infinite;}
+@keyframes mStarFloat{0%{opacity:0;transform:translateY(0) scale(0);}10%{opacity:1;}80%{opacity:.7;}100%{opacity:0;transform:translateY(-60vh) scale(.4);}}
+
+/* ── SCORE PAGE enhancements ── */
+#goScr .score-ring{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:0;
+  border:1.5px solid rgba(100,180,255,.12);
+  animation:scoreRingPulse 3s ease-in-out infinite;
+}
+#goScr .score-ring:nth-child(2){width:380px;height:380px;animation-delay:.8s;border-color:rgba(80,140,255,.07);}
+@keyframes scoreRingPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6;}50%{transform:translate(-50%,-50%) scale(1.08);opacity:1;}}
+
+/* New Best Record flash */
+.newBest{
+  font-family:'Fredoka One',cursive;font-size:clamp(14px,3vw,22px);
+  background:linear-gradient(90deg,#ffd700,#ff8c00,#ffd700);
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:goldShimmer 1.4s linear infinite,recordPop .5s cubic-bezier(.34,1.56,.64,1) both;
+  filter:drop-shadow(0 0 14px rgba(255,200,0,.65));
+  margin:6px 0;
+}
+@keyframes goldShimmer{0%{background-position:0%;}100%{background-position:200%;}}
+@keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
+
+/* Score number count-up animation */
+.goSval{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(52px,12vw,90px);
+  background:linear-gradient(135deg,#ffffff,#a0d8ff,#60c0ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 18px rgba(100,200,255,.55)) drop-shadow(0 0 40px rgba(80,180,255,.3));
+  line-height:1;margin:4px 0;
+}
+/* Stat cards in game over */
+.statsRow{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;justify-content:center;}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:8px 16px;min-width:72px;text-align:center;
+  transition:transform .2s;backdrop-filter:blur(6px);}
+.stat:hover{transform:scale(1.05);}
+.stat-l{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.stat-v{font-family:'Fredoka One',cursive;font-size:22px;color:#fff;text-shadow:0 0 10px rgba(120,200,255,.6);}
+
+/* Journey trail */
+.journey-txt{font-size:10px;color:rgba(180,200,255,.45);letter-spacing:1px;margin:4px 0 8px;max-width:340px;text-align:center;line-height:1.6;}
+
+/* Confetti particles on new best */
+@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
+.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;animation:confettiFall linear forwards;border-radius:2px;pointer-events:none;z-index:20;}
 .gsub{font-family:'Fredoka One',cursive;font-size:14px;color:rgba(200,230,255,.65);
   letter-spacing:6px;margin-bottom:12px;text-shadow:0 0 12px rgba(180,220,255,.35);}
 /* Floating planet row */
@@ -520,7 +626,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   color:#fff;letter-spacing:2px;
   box-shadow:0 6px 24px rgba(0,140,255,.45),0 0 32px rgba(80,180,255,.25);
   animation:btnPulse 2.5s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease;}
-.sbtn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 0 20px rgba(100,200,255,.7),0 0 40px rgba(80,160,255,.4);}
+.sbtn:hover{transform:translateY(-4px) scale(1.07);box-shadow:0 0 24px rgba(100,200,255,.8),0 0 50px rgba(80,160,255,.5);}.sbtn:active{transform:scale(.96);}
 @keyframes btnPulse{0%,100%{box-shadow:0 6px 24px rgba(0,140,255,.45),0 0 32px rgba(80,180,255,.2);}
   50%{box-shadow:0 8px 32px rgba(0,160,255,.5),0 0 48px rgba(100,200,255,.3);}}
 .htxt{font-size:10px;color:rgba(255,255,255,.22);letter-spacing:1px;}
@@ -1027,6 +1133,7 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   <!-- ── MENU ── -->
   <div class="scr on" id="mScr">
     <canvas id="menuStars" style="position:absolute;inset:0;z-index:0;pointer-events:none;"></canvas>
+    <div id="menuParticles"></div>
     <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;padding:8px 12px;">
       <div style="position:relative;margin-bottom:2px;">
         <div class="galaxy-river"></div>
@@ -1211,6 +1318,8 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   <!-- ── RESULT / GAME OVER ── -->
   <div class="scr" id="goScr">
     <div class="result-stars"></div>
+    <div class="score-ring"></div>
+    <div class="score-ring"></div>
     <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;">
     <span id="rEmoji" style="font-size:clamp(60px,12vw,86px);display:block;margin-bottom:4px;animation:resultBob 1.2s ease-in-out infinite;">😵</span>
     <div id="rGrade" style="font-family:'Fredoka One',cursive;font-size:clamp(28px,5vw,52px);letter-spacing:4px;margin-bottom:4px;color:#ff6688;">CRASHED!</div>
@@ -2315,49 +2424,78 @@ function drawGem(g){
 }
 
 // ════════════════════════════════════════════════════════════════
-//  POWER-UPS — glowing crystal orbs, visually distinct from enemies
+//  POWER-UPS — each type has a unique vivid glow + label badge
 // ════════════════════════════════════════════════════════════════
 const PUD={
-  shield:{col:C.cyan,  e:'🛡', lbl:'SHIELD'},
-  boost: {col:C.orange,e:'⚡', lbl:'BOOST'},
-  magnet:{col:C.purple,e:'🧲', lbl:'MAGNET'},
-  heart: {col:C.pink,  e:'❤️', lbl:'LIFE'}
+  shield:{col:C.cyan,   e:'🛡', lbl:'SHIELD',  hue: 185},
+  boost: {col:C.orange, e:'⚡', lbl:'BOOST',   hue:  35},
+  magnet:{col:C.purple, e:'🧲', lbl:'MAGNET',  hue: 275},
+  heart: {col:C.pink,   e:'❤️', lbl:'LIFE',    hue: 340}
 };
 function drawPU(p){
-  if(p.ok)return;p.bob+=.05;p.puls+=.09;
-  const by=p.y+Math.sin(p.bob)*7;
+  if(p.ok)return;
+  p.bob+=.048; p.puls+=.08;
+  const by=p.y+Math.sin(p.bob)*8;
   const cfg=PUD[p.type];
   const pulse=.5+.5*Math.sin(p.puls);
-  ctx.save();ctx.translate(p.x,by);
+  const h=cfg.hue;
+  ctx.save(); ctx.translate(p.x, by);
 
-  // Spinning dashed outer ring (unmistakably a power-up, not an enemy)
-  ctx.save();ctx.rotate(p.puls*.5);
-  ctx.strokeStyle=rgba(cfg.col,.55+.35*pulse);ctx.lineWidth=2.5;ctx.setLineDash([7,5]);
-  ctx.beginPath();sarc(ctx,0,0,30,0,PI2);ctx.stroke();
-  ctx.setLineDash([]);ctx.restore();
+  // ── Outer aura halo (wide, soft, very visible) ──────────────
+  const aura=srgd(ctx,0,0,0,0,0,46);
+  aura.addColorStop(0, `hsla(${h},100%,70%,${.28+.14*pulse})`);
+  aura.addColorStop(.5,`hsla(${h},100%,55%,${.14+.08*pulse})`);
+  aura.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle=aura; ctx.beginPath(); sarc(ctx,0,0,46,0,PI2); ctx.fill();
 
-  // Inner glow orb
-  ctx.shadowColor=rgba(cfg.col,1);ctx.shadowBlur=22+12*pulse;
-  const og=srgd(ctx,0,-7,2,0,0,18);
-  og.addColorStop(0,'rgba(255,255,255,0.98)');og.addColorStop(.35,rgba(cfg.col,.9));og.addColorStop(1,rgba(cfg.col.map(v=>v>>1),0.5));
-  ctx.fillStyle=og;ctx.beginPath();sarc(ctx,0,0,18,0,PI2);ctx.fill();
+  // ── Two spinning dashed rings (inner + outer) ───────────────
+  ctx.save(); ctx.rotate(p.puls*.45);
+  ctx.strokeStyle=`hsla(${h},100%,72%,${.7+.3*pulse})`;
+  ctx.lineWidth=2.5; ctx.setLineDash([8,5]);
+  ctx.beginPath(); sarc(ctx,0,0,34,0,PI2); ctx.stroke();
+  ctx.restore();
+  ctx.save(); ctx.rotate(-p.puls*.28);
+  ctx.strokeStyle=`hsla(${h},100%,88%,${.35+.2*pulse})`;
+  ctx.lineWidth=1.5; ctx.setLineDash([4,8]);
+  ctx.beginPath(); sarc(ctx,0,0,28,0,PI2); ctx.stroke();
+  ctx.setLineDash([]); ctx.restore();
+
+  // ── Core orb: bright centre, colour fade ────────────────────
+  ctx.shadowColor=`hsl(${h},100%,65%)`; ctx.shadowBlur=28+18*pulse;
+  const og=srgd(ctx,0,-6,2,0,0,20);
+  og.addColorStop(0,'rgba(255,255,255,1)');
+  og.addColorStop(.28,`hsla(${h},100%,80%,0.95)`);
+  og.addColorStop(.7, `hsla(${h},100%,45%,0.85)`);
+  og.addColorStop(1,  `hsla(${h},100%,20%,0.5)`);
+  ctx.fillStyle=og; ctx.beginPath(); sarc(ctx,0,0,20,0,PI2); ctx.fill();
   ctx.shadowBlur=0;
 
-  // 4 orbiting sparkles
-  for(let i=0;i<4;i++){
-    const a=i*Math.PI/2+p.puls*.7;const sr=24+2*pulse;
-    ctx.shadowColor=rgba(cfg.col,.8);ctx.shadowBlur=6;
-    ctx.fillStyle=rgba(cfg.col,.8+.2*pulse);
-    ctx.beginPath();sarc(ctx,Math.cos(a)*sr,Math.sin(a)*sr,3,0,PI2);ctx.fill();
+  // ── 6 orbiting sparkle dots ──────────────────────────────────
+  for(let i=0;i<6;i++){
+    const a=i*PI2/6+p.puls*.7;
+    const sr=26+3*pulse;
+    ctx.shadowColor=`hsl(${h},100%,80%)`; ctx.shadowBlur=8;
+    ctx.fillStyle=`hsla(${h},100%,85%,${.7+.3*pulse})`;
+    ctx.beginPath(); sarc(ctx,Math.cos(a)*sr,Math.sin(a)*sr,2.8,0,PI2); ctx.fill();
   }
   ctx.shadowBlur=0;
 
-  // Emoji icon
-  ctx.font='15px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(cfg.e,0,0);
+  // ── Big emoji icon ───────────────────────────────────────────
+  ctx.font='18px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(cfg.e,0,0);
 
-  // Label
-  ctx.font='bold 7px Fredoka One,cursive';ctx.fillStyle='rgba(255,255,255,.75)';
-  ctx.textBaseline='top';ctx.fillText(cfg.lbl,0,22);
+  // ── Label badge below orb ────────────────────────────────────
+  ctx.font='bold 8px Fredoka One,cursive';
+  ctx.textBaseline='top';
+  // Pill background
+  const lw=ctx.measureText(cfg.lbl).width+12;
+  ctx.fillStyle=`hsla(${h},100%,18%,0.82)`;
+  rrect(ctx,-lw/2,23,lw,13,6); ctx.fill();
+  // Glowing text
+  ctx.shadowColor=`hsl(${h},100%,70%)`; ctx.shadowBlur=6;
+  ctx.fillStyle=`hsl(${h},100%,88%)`;
+  ctx.fillText(cfg.lbl,0,27);
+  ctx.shadowBlur=0;
   ctx.restore();
 }
 
@@ -2384,7 +2522,7 @@ function drawHaz(h){
     ctx.beginPath();sell(ctx,-8,22+walk,7,5,0,0,PI2);ctx.fill();
     ctx.beginPath();sell(ctx,8,22-walk,7,5,0,0,PI2);ctx.fill();
     // Body blob
-    ctx.shadowColor='#00ff88';ctx.shadowBlur=16;
+    ctx.shadowColor='#00ff88';ctx.shadowBlur=28;
     const bg=srgd(ctx,0,-12,4,0,-4,22);
     bg.addColorStop(0,'#88ffaa');bg.addColorStop(.45,'#22cc55');bg.addColorStop(1,'#0a5520');
     ctx.fillStyle=bg;
@@ -2424,80 +2562,120 @@ function drawHaz(h){
     }
 
   } else if(h.type==='spike'){
-    // ── CRYSTAL SPIKE CLUSTER — cannot stomp ──────────────────
-    const cx=h.x,base=h.y+20,tip=h.y-14;
-    const pulse=.7+.3*Math.sin(h.ph*4);
-    ctx.shadowColor='rgba(255,20,20,.9)';ctx.shadowBlur=20*pulse;
-    // Base
-    ctx.fillStyle='rgba(60,0,0,.75)';rrect(ctx,cx-18,base-2,36,10,3);ctx.fill();
-    // Centre spike
+    // ── CRYSTAL SPIKE CLUSTER — red danger glow ───────────────
+    const cx=h.x, base=h.y+20, tip=h.y-18;
+    const pulse=.6+.4*Math.sin(h.ph*4);
+    // Wide danger halo on floor
+    const halo=ctx.createRadialGradient(cx,base,0,cx,base,42);
+    halo.addColorStop(0,`rgba(255,0,0,${.22*pulse})`);
+    halo.addColorStop(1,'rgba(255,0,0,0)');
+    ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,cx,base,42,0,PI2); ctx.fill();
+    // Base plate
+    ctx.shadowColor='#ff0000'; ctx.shadowBlur=24*pulse;
+    ctx.fillStyle='rgba(80,0,0,.85)'; rrect(ctx,cx-20,base-2,40,10,3); ctx.fill();
+    // Centre spike — bright tip fade to deep red
     const sg=ctx.createLinearGradient(cx,tip,cx,base);
-    sg.addColorStop(0,'#fff');sg.addColorStop(.2,'#ff5555');sg.addColorStop(.65,'#cc0000');sg.addColorStop(1,'#550000');
+    sg.addColorStop(0,'#ffffff'); sg.addColorStop(.15,'#ff8888');
+    sg.addColorStop(.5,'#dd0000'); sg.addColorStop(1,'#440000');
     ctx.fillStyle=sg;
-    ctx.beginPath();ctx.moveTo(cx,tip);ctx.lineTo(cx+14,base);ctx.lineTo(cx-14,base);ctx.closePath();ctx.fill();
+    ctx.beginPath(); ctx.moveTo(cx,tip); ctx.lineTo(cx+15,base); ctx.lineTo(cx-15,base); ctx.closePath(); ctx.fill();
     // Side spikes
-    ctx.shadowBlur=8;
-    [[-15,base-3,-23,base-11,-23,base],[15,base-3,23,base-11,23,base]].forEach(([ax,ay,bx,by,ex,ey])=>{
-      ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(ex,ey);ctx.closePath();ctx.fill();
+    [[-16,base-3,-26,base-12,-26,base],[16,base-3,26,base-12,26,base]].forEach(([ax,ay,bx,by,ex,ey])=>{
+      ctx.beginPath(); ctx.moveTo(ax+cx-cx,ay); ctx.lineTo(bx+cx-cx,by); ctx.lineTo(ex+cx-cx,ey); ctx.closePath(); ctx.fill();
     });
-    // Specular
-    ctx.fillStyle='rgba(255,200,200,.55)';
-    ctx.beginPath();ctx.moveTo(cx,tip+3);ctx.lineTo(cx-3,tip+12);ctx.lineTo(cx,tip+9);ctx.closePath();ctx.fill();
+    // Specular shine
+    ctx.fillStyle='rgba(255,180,180,.65)';
+    ctx.beginPath(); ctx.moveTo(cx,tip+2); ctx.lineTo(cx-4,tip+14); ctx.lineTo(cx,tip+11); ctx.closePath(); ctx.fill();
     ctx.shadowBlur=0;
-    const pa=.8+.2*Math.sin(h.ph*3);
-    ctx.globalAlpha=pa;ctx.font='13px serif';ctx.textAlign='center';ctx.fillText('⚠️',cx,tip-6);ctx.globalAlpha=1;
+    // Pulsing ⚠️ above
+    const pa=.7+.3*Math.sin(h.ph*3);
+    ctx.globalAlpha=pa; ctx.font='14px serif'; ctx.textAlign='center';
+    ctx.shadowColor='#ff4400'; ctx.shadowBlur=10;
+    ctx.fillText('⚠️',cx,tip-8); ctx.shadowBlur=0; ctx.globalAlpha=1;
 
   } else if(h.type==='asteroid'){
-    // ── ANGRY ASTEROID — spinning with craters + face ──────────
-    const r=22;ctx.translate(h.x,h.y);ctx.rotate(h.ph*.5);
-    ctx.shadowColor='#ff8844';ctx.shadowBlur=14;
+    // ── ANGRY ASTEROID — spinning, vivid orange-red glow ───────
+    const r=22; ctx.translate(h.x,h.y);
+    // Danger halo (static, behind spin)
+    const halo=srgd(ctx,0,0,0,0,0,48);
+    halo.addColorStop(0,`rgba(255,100,0,${.26+.14*Math.sin(h.ph*2)})`);
+    halo.addColorStop(1,'rgba(255,60,0,0)');
+    ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,0,0,48,0,PI2); ctx.fill();
+    ctx.rotate(h.ph*.5);
+    ctx.shadowColor='#ff6600'; ctx.shadowBlur=26;
     const grad=srgd(ctx,-7,-7,2,0,0,r*1.3);
-    grad.addColorStop(0,'#ffe0b0');grad.addColorStop(.35,'#c8906a');grad.addColorStop(1,'#3a1808');
+    grad.addColorStop(0,'#ffe8c0'); grad.addColorStop(.3,'#e8a060'); grad.addColorStop(1,'#3a1005');
     ctx.fillStyle=grad;
-    ctx.beginPath();ctx.moveTo(r,0);ctx.quadraticCurveTo(r*.8,r*.8,0,r);
-    ctx.quadraticCurveTo(-r*.9,r*.7,-r,0);ctx.quadraticCurveTo(-r*.7,-r*.9,0,-r);
-    ctx.quadraticCurveTo(r*.7,-r*.8,r,0);ctx.closePath();ctx.fill();ctx.shadowBlur=0;
-    ctx.strokeStyle='rgba(30,10,0,.5)';ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.moveTo(r,0); ctx.quadraticCurveTo(r*.8,r*.8,0,r);
+    ctx.quadraticCurveTo(-r*.9,r*.7,-r,0); ctx.quadraticCurveTo(-r*.7,-r*.9,0,-r);
+    ctx.quadraticCurveTo(r*.7,-r*.8,r,0); ctx.closePath(); ctx.fill(); ctx.shadowBlur=0;
+    ctx.strokeStyle='rgba(30,10,0,.5)'; ctx.lineWidth=1.2;
     [[-8,-3,5],[6,6,4],[-2,9,3],[9,-6,3]].forEach(([cx,cy,cr])=>{ctx.beginPath();sarc(ctx,cx,cy,cr,0,PI2);ctx.stroke();});
-    // Face (no transform for face so it stays upright)
-    ctx.resetTransform();ctx.translate(h.x,h.y);
-    ctx.fillStyle='rgba(0,0,0,.6)';ctx.beginPath();sarc(ctx,-5,-2,3,0,PI2);ctx.fill();
-    ctx.beginPath();sarc(ctx,5,-2,3,0,PI2);ctx.fill();
-    ctx.strokeStyle='rgba(0,0,0,.7)';ctx.lineWidth=2;ctx.lineCap='round';
-    ctx.beginPath();ctx.moveTo(-6,7);ctx.quadraticCurveTo(0,4,6,7);ctx.stroke();
+    // Face upright
+    ctx.resetTransform(); ctx.translate(h.x,h.y);
+    ctx.fillStyle='rgba(0,0,0,.65)';
+    ctx.beginPath(); sarc(ctx,-5,-2,3,0,PI2); ctx.fill();
+    ctx.beginPath(); sarc(ctx,5,-2,3,0,PI2); ctx.fill();
+    ctx.strokeStyle='rgba(0,0,0,.75)'; ctx.lineWidth=2; ctx.lineCap='round';
+    ctx.beginPath(); ctx.moveTo(-6,7); ctx.quadraticCurveTo(0,4,6,7); ctx.stroke();
 
   } else if(h.type==='comet'){
-    // ── BLAZING COMET — fireball with scowling face ─────────────
-    const r=16;ctx.translate(h.x,h.y);
-    ctx.shadowColor='#ffaa00';ctx.shadowBlur=22;
-    // Flame tail layers
-    [[90,0.0,'rgba(255,40,0,0)'],[70,0.4,'rgba(255,100,0,.35)'],[0,1.0,'rgba(255,210,50,.9)']].reduce((gl,stop)=>{
-      const t=ctx.createLinearGradient(-90,0,0,0);
-      t.addColorStop(0,stop[2]);t.addColorStop(1,`rgba(255,220,60,.0)`);
-      ctx.fillStyle=t;ctx.beginPath();ctx.moveTo(-90,-9+stop[1]*4);ctx.lineTo(0,-2);ctx.lineTo(0,2);ctx.lineTo(-90,9-stop[1]*4);ctx.closePath();ctx.fill();
-    },[]);
-    const gHead=srgd(ctx,0,0,2,0,0,r*1.5);
-    gHead.addColorStop(0,'#ffffff');gHead.addColorStop(.3,'#ffee44');gHead.addColorStop(.75,'#ff5500');gHead.addColorStop(1,'rgba(255,30,0,.05)');
-    ctx.fillStyle=gHead;ctx.beginPath();sarc(ctx,0,0,r,0,PI2);ctx.fill();ctx.shadowBlur=0;
+    // ── BLAZING COMET — fiery with vivid amber/orange glow ─────
+    const r=16; ctx.translate(h.x,h.y);
+    // Wide flame halo
+    const halo=srgd(ctx,0,0,0,0,0,52);
+    halo.addColorStop(0,`rgba(255,140,0,${.3+.15*Math.sin(h.ph*3)})`);
+    halo.addColorStop(.55,'rgba(255,60,0,.12)');
+    halo.addColorStop(1,'rgba(255,0,0,0)');
+    ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,0,0,52,0,PI2); ctx.fill();
+    ctx.shadowColor='#ff8800'; ctx.shadowBlur=30;
+    // Tail — three layered flame wedges
+    [['rgba(255,30,0,0)',0],['rgba(255,110,0,.45)',.45],['rgba(255,220,50,.9)',1]].forEach(([col,w])=>{
+      const t=ctx.createLinearGradient(-88,0,0,0);
+      t.addColorStop(0,col); t.addColorStop(1,'rgba(255,220,60,0)');
+      ctx.fillStyle=t;
+      ctx.beginPath(); ctx.moveTo(-88,-8+w*5); ctx.lineTo(0,-2); ctx.lineTo(0,2); ctx.lineTo(-88,8-w*5); ctx.closePath(); ctx.fill();
+    });
+    // Fireball head
+    const gHead=srgd(ctx,0,0,2,0,0,r*1.6);
+    gHead.addColorStop(0,'#ffffff'); gHead.addColorStop(.25,'#ffe066');
+    gHead.addColorStop(.65,'#ff5500'); gHead.addColorStop(1,'rgba(255,20,0,.05)');
+    ctx.fillStyle=gHead; ctx.beginPath(); sarc(ctx,0,0,r,0,PI2); ctx.fill(); ctx.shadowBlur=0;
     // Scowl face
-    ctx.fillStyle='rgba(100,30,0,.85)';
-    ctx.beginPath();sarc(ctx,-5,-3,3.5,0,PI2);ctx.fill();ctx.beginPath();sarc(ctx,5,-3,3.5,0,PI2);ctx.fill();
-    ctx.strokeStyle='rgba(80,20,0,.9)';ctx.lineWidth=2;ctx.lineCap='round';
-    ctx.beginPath();ctx.moveTo(-7,5);ctx.lineTo(-2,3);ctx.lineTo(2,3);ctx.lineTo(7,5);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(-9,-8);ctx.lineTo(-3,-5);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(9,-8);ctx.lineTo(3,-5);ctx.stroke();
+    ctx.fillStyle='rgba(100,30,0,.88)';
+    ctx.beginPath(); sarc(ctx,-5,-3,3.5,0,PI2); ctx.fill();
+    ctx.beginPath(); sarc(ctx,5,-3,3.5,0,PI2); ctx.fill();
+    ctx.strokeStyle='rgba(80,20,0,.9)'; ctx.lineWidth=2; ctx.lineCap='round';
+    ctx.beginPath(); ctx.moveTo(-7,5); ctx.lineTo(-2,3); ctx.lineTo(2,3); ctx.lineTo(7,5); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-9,-8); ctx.lineTo(-3,-5); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(9,-8); ctx.lineTo(3,-5); ctx.stroke();
 
   } else if(h.type==='debris'){
-    // ── ROBOT JUNK — spinning satellite with glowing red eye ────
-    ctx.translate(h.x,h.y);ctx.rotate(h.ph*.5);
-    ctx.shadowColor='#4488ff';ctx.shadowBlur=12;
-    ctx.fillStyle='rgba(150,170,195,.95)';rrect(ctx,-20,-15,40,30,4);ctx.fill();
-    ctx.strokeStyle='rgba(50,70,110,.9)';ctx.lineWidth=1.5;rrect(ctx,-20,-15,40,30,4);ctx.stroke();
-    ctx.fillStyle='rgba(45,95,175,.85)';rrect(ctx,-34,-6,13,12,2);ctx.fill();rrect(ctx,21,-6,13,12,2);ctx.fill();
-    ctx.shadowColor='#ff0000';ctx.shadowBlur=16;ctx.fillStyle='#ff2222';
-    ctx.beginPath();sarc(ctx,0,-1,8,0,PI2);ctx.fill();
-    ctx.shadowColor='#ff8888';ctx.shadowBlur=4;ctx.fillStyle='#ffaaaa';
-    ctx.beginPath();sarc(ctx,-2,-3,3.5,0,PI2);ctx.fill();ctx.shadowBlur=0;
+    // ── ROGUE SATELLITE — blue electric glow, red danger eye ───
+    ctx.translate(h.x,h.y);
+    // Danger halo
+    const halo=srgd(ctx,0,0,0,0,0,44);
+    halo.addColorStop(0,`rgba(60,140,255,${.2+.12*Math.sin(h.ph*2)})`);
+    halo.addColorStop(1,'rgba(0,60,255,0)');
+    ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,0,0,44,0,PI2); ctx.fill();
+    ctx.rotate(h.ph*.5);
+    ctx.shadowColor='#2266ff'; ctx.shadowBlur=20;
+    ctx.fillStyle='rgba(155,175,200,.97)'; rrect(ctx,-22,-16,44,32,5); ctx.fill();
+    ctx.strokeStyle='rgba(100,160,255,.7)'; ctx.lineWidth=2;
+    rrect(ctx,-22,-16,44,32,5); ctx.stroke();
+    // Solar panels — bright blue
+    ctx.shadowColor='#44aaff'; ctx.shadowBlur=12;
+    ctx.fillStyle='rgba(30,90,200,.9)'; rrect(ctx,-38,-7,15,14,3); ctx.fill();
+    rrect(ctx,23,-7,15,14,3); ctx.fill();
+    ctx.strokeStyle='rgba(100,200,255,.5)'; ctx.lineWidth=1;
+    rrect(ctx,-38,-7,15,14,3); ctx.stroke();
+    rrect(ctx,23,-7,15,14,3); ctx.stroke();
+    // Danger eye — vivid red pulsing
+    ctx.shadowColor='#ff0000'; ctx.shadowBlur=22+10*Math.sin(h.ph*4);
+    ctx.fillStyle='#ff1111';
+    ctx.beginPath(); sarc(ctx,0,-1,9,0,PI2); ctx.fill();
+    ctx.shadowColor='#ff8888'; ctx.shadowBlur=5; ctx.fillStyle='#ffbbbb';
+    ctx.beginPath(); sarc(ctx,-2,-3,4,0,PI2); ctx.fill(); ctx.shadowBlur=0;
 
   } else if(h.type==='darkCloud'){
     // ── GHOST SPIRIT — wiggly ghost villain with crown ──────────
@@ -2505,7 +2683,7 @@ function drawHaz(h){
     const bob=Math.sin(h.ph*1.1)*6;
     ctx.translate(h.x,h.y+bob);
     const r=30+7*pulse;
-    ctx.shadowColor='#9933ff';ctx.shadowBlur=24*pulse;
+    ctx.shadowColor='#9933ff';ctx.shadowBlur=34*pulse;
     // Ghost body
     const g=srgd(ctx,0,-12,3,0,0,r);
     g.addColorStop(0,`rgba(130,0,255,${.92+.08*pulse})`);g.addColorStop(.5,`rgba(70,0,160,.85)`);g.addColorStop(1,'rgba(0,0,0,0)');
@@ -2688,33 +2866,17 @@ const COSMO={
   _groundY:0, // locked Y when on ground — prevents jitter
   reset(){const H=gc.height;const W=gc.width;
     this.x=Math.min(140,W*0.18);
-    this.y=H-230;this.dy=0;this.onGround=false;this.jumpsLeft=2;this.tilt=0;this.sqX=this.sqY=1;this.trail=[];this.glowHue=180;this.thrPh=0;this.runPh=0;this.shieldOn=this.boostOn=this.magnetOn=this.invOn=false;this.shieldT=this.boostT=this.magnetT=this.invT=0;this.eyeOpen=1;this.blinkT=rnd(80,180);this.rX=this.x;this.rY=H-230;this._groundY=H-230;},
-  warpIn(){const W=gc.width;this.x=clp(this.rX||Math.min(140,W*0.18),60,W-80);this.y=-70;this.dy=9;this.onGround=false;this.jumpsLeft=2;this.tilt=0;this.invOn=true;this.invT=180;this.sqX=.7;this.sqY=1.45;},
+    this.y=H-230;this.dy=0;this.onGround=false;this.jumpsLeft=2;this.sqX=this.sqY=1;this.trail=[];this.glowHue=180;this.thrPh=0;this.runPh=0;this.shieldOn=this.boostOn=this.magnetOn=this.invOn=false;this.shieldT=this.boostT=this.magnetT=this.invT=0;this.eyeOpen=1;this.blinkT=rnd(80,180);this.rX=this.x;this.rY=H-230;this._groundY=H-230;},
+  warpIn(){const W=gc.width;this.x=clp(this.rX||Math.min(140,W*0.18),60,W-80);this.y=-70;this.dy=9;this.onGround=false;this.jumpsLeft=2;this.invOn=true;this.invT=180;this.sqX=.7;this.sqY=1.45;},
   doJump(dbl){this.dy=dbl?-16.5:-20.5;this.sqX=1.42;this.sqY=0.62;PARTS.emit(this.x+this.w/2,this.y+this.h,9,dbl?C.purple:C.cyan,{s0:1,s1:3,l0:14,l1:30,sz0:2,sz1:5,grav:.1});if(dbl)PARTS.emit(this.x+this.w/2,this.y+this.h/2,12,C.purple,{s0:2,s1:5,l0:16,l1:26,sz0:1,sz1:4,mx:1.4,my:.5});},
   land(){this.sqX=1.3;this.sqY=0.72;this.jumpsLeft=2;AUDIO.land();PARTS.emit(this.x+this.w/2,this.y+this.h,6,C.cyan,{s0:.5,s1:2,l0:10,l1:20,sz0:1,sz1:3,grav:.18});},
   update(){
-    const props=CHAR_PROPS[selectedCharacter]||CHAR_PROPS.rocket;
-    const grav=this.boostOn ? props.grav*0.48 : props.grav;   // boost = low grav
-    const termVel=this.boostOn ? 14 : 22;                     // terminal velocity
-    if(!this.onGround){
-      this.dy=Math.min(this.dy+grav, termVel);
-      this.y+=this.dy;
-    } else {
+    const grav=this.boostOn?.34:.7;
+    if(!this.onGround){this.dy=Math.min(this.dy+grav,22);this.y+=this.dy;}
+    else{
       // Locked to platform — no physics jitter
       this.y=this._groundY;
       this.dy=0;
-    }
-    // ── Tilt based on vertical velocity ──────────────────────────
-    // Rising: tilt back slightly. Falling: nose-dive forward.
-    // Stored in this.tilt, read by draw().
-    if(!this.onGround){
-      const targetTilt = this.dy < -6 ? -0.14    // rising fast → lean back
-                       : this.dy < 0  ? -0.07    // rising slow
-                       : this.dy > 8  ?  0.14    // falling fast → nose down
-                       :                 0.05;   // falling slow
-      this.tilt = lerp(this.tilt || 0, targetTilt, 0.18);
-    } else {
-      this.tilt = lerp(this.tilt || 0, 0.08, 0.14); // gentle forward lean on ground
     }
     const W=gc.width;
     this.x=clp(this.x, 10, W - this.w - 10);
@@ -2747,7 +2909,7 @@ const COSMO={
     const bobAmp=this.onGround?Math.min(2.5,spd2*0.18):0;
     const bobY=this.onGround?Math.sin(this.runPh*2)*bobAmp:0;
     // Forward lean: fixed subtle angle when running, no oscillation
-    const lean=this.tilt||0; // velocity-driven tilt set in update()
+    const lean=this.onGround?0.08:(this.dy<-4?-0.06:0.03);
 
     ctx.save();ctx.translate(cx, cy+bobY);ctx.rotate(lean);ctx.scale(clp(this.sqX,.55,1.55),clp(this.sqY,.55,1.55));
 
@@ -2852,6 +3014,7 @@ const COSMO={
 // ════════════════════════════════════════════════════════════════
 let GS=null,frame=0,gameRunning=false,RAF_bg,RAF_game;
 let dLock=false;
+let _coyoteFrames=0; // frames player can still jump after walking off a platform edge
 // DOM update throttle (perf)
 let _lastScore=-1,_lastGems=-1;
 
@@ -2949,7 +3112,7 @@ function triggerWarp(dir){
       BG.setWorld();updLvlBadge();
       _rebuildPlatforms();
       PORTAL.reset();GS.portalSpawned=false;
-      COSMO.warpIn();jumpCount=0;dLock=false;
+      COSMO.warpIn();dLock=false;
       const W=gc.width,H=gc.height;
       floatTxt(dir>0?'✨ BRIGHTER WORLD!':'🌑 DARKER WORLD!',rgba(dir>0?C.gold:C.cyan,1),W/2,H*.36);
     });
@@ -2996,7 +3159,7 @@ function _respawnSafe(){
   } else {
     COSMO.x=130;COSMO.y=H-200;COSMO.dy=0;
   }
-  COSMO.onGround=false;COSMO.jumpsLeft=2;jumpCount=0;
+  COSMO.onGround=false;COSMO.jumpsLeft=2;
   COSMO.invOn=true;COSMO.invT=180;// longer invincibility after respawn
   COSMO.sqX=1.5;COSMO.sqY=0.6;
 }
@@ -3040,28 +3203,39 @@ function physics(){
   }
   COSMO.update();
   checkEnemyStomp();
+  // Coyote time: track if grounded last frame
+  const _wasGround = COSMO.onGround;
   let touched=false;
   GS.platforms.forEach(p=>{
-    if(p.alpha<.05)return;const py=p.y;
-    // Check collision only when falling onto platform top
-    if(COSMO.x<p.x+p.w&&COSMO.x+COSMO.w>p.x&&
-       COSMO.y+COSMO.h>=py&&COSMO.y+COSMO.h<=py+p.h+20&&COSMO.dy>=0){
+    if(p.alpha<.05)return;
+    // Moving platform: use its actual current Y
+    const py=p.moving ? p.oY+Math.sin(frame*.024*p.mS)*p.mR : p.y;
+    // 4px inset on sides prevents catching platform corners; +26 vertical tolerance for moving platforms
+    if(COSMO.x+COSMO.w-4>p.x && COSMO.x+4<p.x+p.w &&
+       COSMO.y+COSMO.h>=py   && COSMO.y+COSMO.h<=py+p.h+26 && COSMO.dy>=0){
       if(!COSMO.onGround)COSMO.land();
-      // Snap precisely to platform top — key to eliminating shaking
       COSMO._groundY=py-COSMO.h;
       COSMO.y=COSMO._groundY;
       COSMO.onGround=true;touched=true;COSMO.dy=0;
       COSMO.rX=clp(p.x+p.w/2-COSMO.w/2,80,W-COSMO.w-20);COSMO.rY=py;
       if(p.type==='bounce'){
-        COSMO.dy=-22;COSMO.onGround=false;
+        // Bounce = strong jump force, full jump refund, satisfying particles
+        const _bProps=CHAR_PROPS[selectedCharacter]||CHAR_PROPS.rocket;
+        COSMO.dy=_bProps.jumpForce*1.22;
+        COSMO.onGround=false;
+        COSMO.jumpsLeft=2; // full refund
         AUDIO.bounce();
-        PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,16,C.gold,{s0:1.5,s1:5.5,l0:20,l1:40,sz0:2,sz1:7,up:2.5,sh:'s'});
+        PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,20,C.gold,{s0:2,s1:6,l0:22,l1:42,sz0:2,sz1:7,up:3,sh:'s'});
+        PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,8,[255,255,180],{s0:1,s1:3,l0:15,l1:28,sz0:1,sz1:3,up:4});
         floatTxt('BOING! 🌟',rgba(C.gold,1),COSMO.x+COSMO.w/2,COSMO.y-20);addSc(3);
       }
       if(p.type==='crumble'&&!p.crumb)p.crumb=true;
     }
   });
-  if(!touched)COSMO.onGround=false;
+  // Coyote time: if just left ground, give 7 frames of jump grace
+  if(_wasGround&&!touched) _coyoteFrames=7;
+  if(_coyoteFrames>0) _coyoteFrames--;
+  if(!touched) COSMO.onGround=false;
   // Gems
   GS.gL.forEach(g=>{if(g.ok)return;const dx=COSMO.x+COSMO.w/2-g.x,dy=COSMO.y+COSMO.h/2-g.y;if(Math.sqrt(dx*dx+dy*dy)<COSMO.w*.6){g.ok=true;GS.gC++;GS.comboT=70;GS.combo=Math.min(GS.combo+1,8);GS.maxCombo=Math.max(GS.maxCombo,GS.combo);
     gemStreak++;streakTimer=180;updateGemStreak();
@@ -3166,170 +3340,128 @@ function drawGame(){
 }
 
 // ════════════════════════════════════════════════════════════════
-//  UNIFIED JUMP + INPUT SYSTEM
-//  Single triggerJump() called by ALL input types.
-//
-//  Jump model (mirrors the COSMO.jumpsLeft model already in physics):
-//    jumpCount = 0        → on ground, both jumps available
-//    jumpCount = 1        → first jump used, still in air
-//    jumpCount = 2 (max)  → both jumps spent, no more until landing
-//
-//  COSMO.land() (called from physics on ground contact) resets
-//  jumpsLeft → 2, so we keep jumpCount in sync there via a hook.
-//
-//  Inputs:  Keyboard Space/Up/W/Enter · Mouse click · Touch tap
-//           TV remote Enter/OK · (all wired once, no duplicates)
+//  INPUT
 // ════════════════════════════════════════════════════════════════
+// ── UNIFIED JUMP SYSTEM ─────────────────────────────────────────
+// Single entry point for ALL inputs: keyboard, mouse, touch, TV remote
+// - 120ms wall-clock cooldown (no frame drift)
+// - Coyote time: first jump still works 7 frames after leaving platform
+// - Variable height: hold key = full arc, tap = short hop (via keyup)
+// - Double jump: full radial burst + ring sparks + DOUBLE! text
+// ─────────────────────────────────────────────────────────────────
+let _lastJumpMs = 0;
+const JUMP_CD_MS = 120;
 
-// ── State ────────────────────────────────────────────────────────
-let jumpCount    = 0;          // 0=ground ready, 1=first used, 2=both used
-const MAX_JUMPS  = 2;
-let _lastJumpMs  = 0;          // wall-clock ms of last accepted jump
-const JUMP_CD_MS = 120;        // cooldown — stops touch+mousedown double-fire
-let _jumpKeyHeld = false;      // true while Space/Up/W is held (variable height)
+function doJump(){
+  // Guard: must be in active game
+  if(!gameRunning)return;
+  if(!GS)return;
+  if(dLock)return;
+  if(typeof paused!=='undefined'&&paused)return;
+  const now=Date.now();
+  if(now - _lastJumpMs < JUMP_CD_MS) return;
 
-// ── Core jump executor ───────────────────────────────────────────
-function triggerJump() {
-  // Hard guards — never jump when blocked
-  if (!gameRunning || !GS || dLock || paused) return;
-
-  const now = Date.now();
-  if (now - _lastJumpMs < JUMP_CD_MS) return;   // cooldown
-  if (jumpCount >= MAX_JUMPS)          return;   // both jumps spent
+  // jumpsLeft = 2 (ground), 1 (first used), 0 (both used)
+  // Coyote grace: if jumpsLeft==1 but coyoteFrames active, treat as first jump
+  const coyote = _coyoteFrames>0 && COSMO.jumpsLeft===1;
+  if(COSMO.jumpsLeft<=0) return;
 
   _lastJumpMs = now;
   AUDIO._r();
 
-  const isDouble = jumpCount === 1;              // second jump = double jump
-  const props    = CHAR_PROPS[selectedCharacter] || CHAR_PROPS.rocket;
+  const d = !coyote && COSMO.jumpsLeft===1 && !COSMO.onGround; // true = double jump
+  const props=CHAR_PROPS[selectedCharacter]||CHAR_PROPS.rocket;
 
-  // ── Apply velocity ─────────────────────────────────────────────
-  COSMO.dy  = isDouble ? props.dblForce : props.jumpForce;
-  COSMO.sqX = 1.38;
-  COSMO.sqY = 0.66;
-  COSMO.onGround = false;                        // leave ground immediately
+  COSMO.dy = d ? props.dblForce : props.jumpForce;
+  COSMO.sqX=1.38; COSMO.sqY=0.66;
+  COSMO.onGround=false;
+  COSMO.jumpsLeft--;
+  if(coyote) _coyoteFrames=0;
 
-  // ── Keep legacy jumpsLeft in sync (physics still reads it) ─────
-  COSMO.jumpsLeft = MAX_JUMPS - jumpCount - 1;
-
-  jumpCount++;
-
-  // ── Audio ──────────────────────────────────────────────────────
-  if (isDouble) AUDIO.doubleJump(); else AUDIO.jump();
-
-  // ── Particles ──────────────────────────────────────────────────
-  // First jump: downward burst from feet
-  PARTS.emit(
-    COSMO.x + COSMO.w / 2, COSMO.y + COSMO.h,
-    isDouble ? 16 : 9,
-    isDouble ? C.purple : C.cyan,
-    {s0:1, s1:3, l0:14, l1:30, sz0:2, sz1:5, grav:.1}
-  );
-  if (isDouble) {
-    // Double jump: extra radial burst from centre
-    PARTS.emit(
-      COSMO.x + COSMO.w / 2, COSMO.y + COSMO.h / 2,
-      14, C.purple,
-      {s0:2.5, s1:6, l0:18, l1:32, sz0:1.5, sz1:5, mx:1.6, my:.6}
-    );
-    // Ring pulse — 8 outward sparks in all directions
-    for (let i = 0; i < 8; i++) {
-      const a = i * Math.PI / 4;
-      PARTS.emit(
-        COSMO.x + COSMO.w / 2, COSMO.y + COSMO.h / 2,
-        2, C.gold,
-        {s0:3, s1:5, l0:12, l1:22, sz0:1, sz1:3,
-         mx: Math.cos(a) * 2.5, my: Math.sin(a) * 1.8}
-      );
+  if(d){
+    // Double jump — big radial ring burst
+    AUDIO.doubleJump();
+    PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,18,C.purple,{s0:1,s1:4,l0:14,l1:32,sz0:2,sz1:6,grav:.08});
+    PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h/2,14,C.purple,{s0:2.5,s1:6,l0:18,l1:30,sz0:1,sz1:5,mx:1.5,my:.5});
+    // Ring sparks in 8 directions
+    for(let i=0;i<8;i++){
+      const a=i*Math.PI/4;
+      PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h/2,2,C.gold,
+        {s0:3,s1:5,l0:12,l1:20,sz0:1,sz1:3,mx:Math.cos(a)*2.4,my:Math.sin(a)*1.6});
     }
-    floatTxt('DOUBLE! 🔥', rgba(C.purple, 1), COSMO.x + COSMO.w / 2, COSMO.y - 20);
+    floatTxt('DOUBLE! 🔥',rgba(C.purple,1),COSMO.x+COSMO.w/2,COSMO.y-20);
+  } else {
+    // Normal jump — clean burst from feet
+    AUDIO.jump();
+    PARTS.emit(COSMO.x+COSMO.w/2,COSMO.y+COSMO.h,10,C.cyan,{s0:1,s1:3.5,l0:14,l1:28,sz0:2,sz1:5,grav:.1});
   }
 }
 
-// Keep legacy name working (referenced elsewhere in codebase)
-function doJump() { triggerJump(); }
-
-// ── Landing hook: reset jumpCount when COSMO lands ───────────────
-// Wrap COSMO.land() so jumpCount resets whenever physics detects landing.
-const _origLand = COSMO.land.bind(COSMO);
-COSMO.land = function() {
-  _origLand();
-  jumpCount = 0;           // both jumps restored on ground contact
-};
-
-// ── Variable jump height: cut velocity when key released early ───
-// Holding Space/Up/W gives a higher jump; tapping gives a short hop.
-document.addEventListener('keyup', e => {
-  if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {
-    _jumpKeyHeld = false;
-    // If still rising and key released early, dampen upward velocity
-    if (COSMO.dy < 0) COSMO.dy *= 0.52;
+// Variable jump height: release key early = shorter hop
+document.addEventListener('keyup',e=>{
+  if(e.code==='Space'||e.code==='ArrowUp'||e.code==='KeyW'){
+    if(COSMO&&COSMO.dy<0) COSMO.dy*=0.55; // cut upward velocity on key release
   }
 });
+// ── Prevent scroll/zoom during play ──────────────────────────────
+document.addEventListener('touchmove',e=>{ if(gameRunning)e.preventDefault(); },{passive:false});
+// Prevent Space/Arrow scrolling the page at all times during gameplay
+window.addEventListener('keydown',function(e){
+  if(gameRunning&&(e.code==='Space'||e.code==='ArrowUp'||e.code==='ArrowDown'))e.preventDefault();
+},{passive:false});
+document.addEventListener('contextmenu',e=>e.preventDefault());
 
-// ── Utility: is a DOM node a UI control (not the game canvas)? ───
-function _isUITarget(t) {
-  return !!(t && (
-    t.tagName === 'BUTTON' ||
-    t.tagName === 'INPUT'  ||
-    t.tagName === 'A'      ||
-    t.closest('#pauseOverlay') ||
-    t.closest('#screens')      ||
-    t.closest('#sidePanel')    ||
-    t.closest('#journeyBar')
-  ));
+// ════════════════════════════════════════════════════════════════
+//  JUMP INPUT — universal, works on ALL devices
+//  Strategy: listen on document level so nothing blocks events.
+//  Dedupe touch+mouse with 120ms wall-clock cooldown.
+// ════════════════════════════════════════════════════════════════
+
+// KEYBOARD — Space / ArrowUp / W
+// Keyboard: attached to WINDOW so it always fires regardless of focus
+window.addEventListener('keydown',function(e){
+  const tag=document.activeElement&&document.activeElement.tagName;
+  if(tag==='INPUT'||tag==='TEXTAREA')return;
+  // Always block scroll on game keys
+  if(e.code==='Space'||e.code==='ArrowUp'){e.preventDefault();}
+  const goShowing=document.getElementById('goScr')&&document.getElementById('goScr').classList.contains('on');
+  if(e.code==='Space'||e.code==='ArrowUp'||e.code==='KeyW'||e.code==='Enter'){
+    if(goShowing){onTryAgain();return;}
+    doJump();
+    return;
+  }
+  if(e.code==='KeyR'&&goShowing){onTryAgain();return;}
+  if((e.code==='KeyP'||e.code==='Escape')&&gameRunning)togglePause();
+});
+
+// MOUSE CLICK — fires on canvas and everywhere else in game area
+window.addEventListener('mousedown',function(e){
+  if(!gameRunning||paused)return;
+  // Ignore clicks on UI buttons/inputs
+  const t=e.target;
+  if(t&&(t.tagName==='BUTTON'||t.tagName==='INPUT'||t.tagName==='A'
+     ||t.closest('#pauseOverlay')||t.closest('#screens')
+     ||t.closest('#sidePanel')))return;
+  doJump();
+});
+
+// ── TOUCH INPUT — single listener, no duplicates ──────────────
+function _isUITarget(t){
+  return !!(t&&(t.tagName==='BUTTON'||t.tagName==='INPUT'||t.tagName==='A'
+    ||t.closest('#pauseOverlay')||t.closest('#screens')
+    ||t.closest('#sidePanel')||t.closest('#journeyBar')));
 }
-
-// ── Prevent scroll/bounce during gameplay ────────────────────────
-document.addEventListener('touchmove',    e => { if (gameRunning) e.preventDefault(); }, {passive:false});
-document.addEventListener('contextmenu',  e => e.preventDefault());
-
-// ════════════════════════════════════════════════════════════════
-//  EVENT LISTENERS — registered exactly once each
-// ════════════════════════════════════════════════════════════════
-
-// KEYBOARD: Space · ArrowUp · W · Enter (jump / TV remote OK)
-//           R (restart on game over)  · P / Esc (pause)
-document.addEventListener('keydown', e => {
-  const tag = document.activeElement?.tagName;
-  if (tag === 'INPUT' || tag === 'TEXTAREA') return;   // don't hijack text fields
-
-  const goShowing = document.getElementById('goScr')?.classList.contains('on');
-
-  if (e.code === 'Space' || e.code === 'ArrowUp' ||
-      e.code === 'KeyW'  || e.code === 'Enter') {
-    e.preventDefault();
-    if (goShowing) { onTryAgain(); return; }
-    _jumpKeyHeld = true;
-    triggerJump();
-    return;
-  }
-  if (e.code === 'KeyR' && goShowing) { onTryAgain(); return; }
-  if ((e.code === 'KeyP' || e.code === 'Escape') && gameRunning) togglePause();
-});
-
-// MOUSE: click anywhere in game area (not UI)
-document.addEventListener('mousedown', e => {
-  if (!gameRunning || paused) return;
-  if (_isUITarget(e.target)) return;
-  triggerJump();
-});
-
-// TOUCH: one listener covers both the dedicated jump button and canvas taps
-document.addEventListener('touchstart', e => {
-  if (!gameRunning || paused) return;
-  const t = e.target;
-  // Dedicated jump button → hard preventDefault + stopPropagation
-  if (t && t.id === 'touchJumpBtn') {
-    e.preventDefault();
-    e.stopPropagation();
-    triggerJump();
-    return;
-  }
-  if (_isUITarget(t)) return;
+document.addEventListener('touchstart',e=>{
+  if(!gameRunning||paused)return;
+  const t=e.target;
+  if(t&&t.id==='touchJumpBtn'){e.preventDefault();e.stopPropagation();doJump();return;}
+  if(_isUITarget(t))return;
   e.preventDefault();
-  triggerJump();
-}, {passive:false});
+  doJump();
+},{passive:false});
+
+// Mouse: click anywhere in game area (not UI)
+// (mousedown listener already set above)
 
 // ════════════════════════════════════════════════════════════════
 //  PROTON / PARTICLE RINGS on COSMO
@@ -3458,11 +3590,15 @@ function togglePause(){
     const hp=GS?GS.hp:3;
     document.getElementById('pLives').textContent='❤️'.repeat(hp)+'🖤'.repeat(Math.max(0,3-hp));
     cancelAnimationFrame(RAF_game);
+    // Stop music on pause (regardless of mute state)
+    AUDIO.stopMusic();
     // Sync volume slider to current state
     syncMuteUI();
   } else {
     ov.classList.remove('on');
     RAF_game=requestAnimationFrame(gameLoop);
+    // Resume music on unpause ONLY if not manually muted
+    if(!AUDIO.muted) AUDIO.startMusic();
   }
 }
 function quitToMenu(){
@@ -3603,43 +3739,46 @@ let menuStarData=[],menuStarRAF=null;
 function initMenuStars(){
   const c=document.getElementById('menuStars');
   if(!c)return;
-  c.width=innerWidth;c.height=innerHeight;
-  const ctx2=c.getContext('2d');
-  menuStarData=Array.from({length:120},()=>({
-    x:rnd(0,c.width),y:rnd(0,c.height),
-    sz:rnd(.4,2.2),spd:rnd(.08,.55),
-    br:rnd(.2,.9),tw:rnd(0,PI2),ts:rnd(.02,.06),
-    hue:rndI(160,310)
-  }));
-  // shooting star
-  let ss={x:-200,y:0,active:false,timer:0};
-  function drawMenu(){
-    ctx2.clearRect(0,0,c.width,c.height);
-    menuStarData.forEach(s=>{
-      s.tw+=s.ts;s.x-=s.spd;if(s.x<0){s.x=c.width;s.y=rnd(0,c.height);}
-      const a=s.br*(.5+.5*Math.sin(s.tw));
-      ctx2.fillStyle=`hsla(${s.hue},80%,92%,${clp(a,0,1)})`;
-      ctx2.fillRect(s.x,s.y,s.sz,s.sz);
-    });
-    // shooting star
-    ss.timer--;
-    if(ss.timer<=0){ss.timer=rndI(120,280);ss.x=rnd(0,c.width*.6);ss.y=rnd(0,c.height*.4);ss.active=true;ss.dx=rnd(4,9);ss.dy=rnd(1.5,4);ss.life=60;ss.ml=60;}
-    if(ss.active){ss.x+=ss.dx;ss.y+=ss.dy;ss.life--;
-      const f=ss.life/ss.ml;const len=80*f;
-      const sg=ctx2.createLinearGradient(ss.x,ss.y,ss.x-len,ss.y-len*.5);
-      sg.addColorStop(0,`rgba(255,255,255,${f*.85})`);sg.addColorStop(1,'rgba(255,255,255,0)');
-      ctx2.strokeStyle=sg;ctx2.lineWidth=1.5;ctx2.beginPath();ctx2.moveTo(ss.x,ss.y);ctx2.lineTo(ss.x-len,ss.y-len*.5);ctx2.stroke();
-      if(ss.life<=0)ss.active=false;
-    }
-    menuStarRAF=requestAnimationFrame(drawMenu);
+  c.width=window.innerWidth;c.height=window.innerHeight;
+  const cx=c.getContext('2d');
+  const stars=[];
+  for(let i=0;i<180;i++){
+    stars.push({x:Math.random()*c.width,y:Math.random()*c.height,
+      r:Math.random()*1.5+0.3,spd:Math.random()*0.12+0.04,
+      a:Math.random()*.9+.1,tw:Math.random()*Math.PI*2,ts:Math.random()*.018+.006});
   }
-  cancelAnimationFrame(menuStarRAF);
-  drawMenu();
+  let raf;
+  function drawMenuStars(){
+    cx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s=>{
+      s.x-=s.spd; if(s.x<0){s.x=c.width;s.y=Math.random()*c.height;}
+      s.tw+=s.ts;
+      const a=s.a*(0.5+0.5*Math.sin(s.tw));
+      cx.fillStyle=`rgba(255,255,255,${a})`;
+      cx.beginPath();cx.arc(s.x,s.y,s.r,0,Math.PI*2);cx.fill();
+    });
+    raf=requestAnimationFrame(drawMenuStars);
+  }
+  if(menuStarRAF) cancelAnimationFrame(menuStarRAF);
+  menuStarRAF=requestAnimationFrame(drawMenuStars);
+
+  // Spawn floating emoji particles on menu
+  const mp=document.getElementById('menuParticles');
+  if(mp){
+    mp.innerHTML='';
+    const emojis=['☀️','🪨','🌍','🔴','🪐','💍','🌀','⭐','💎','🚀','✨','🌟'];
+    for(let i=0;i<22;i++){
+      const span=document.createElement('div');
+      span.style.cssText=`position:absolute;font-size:${Math.random()*14+10}px;`+
+        `left:${Math.random()*95}%;`+
+        `animation:mStarFloat ${Math.random()*14+8}s ${Math.random()*12}s linear infinite;`+
+        `opacity:0;pointer-events:none;`;
+      span.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+      mp.appendChild(span);
+    }
+  }
 }
 
-// ════════════════════════════════════════════════════════════════
-//  LIFECYCLE
-// ════════════════════════════════════════════════════════════════
 function showScr(id){
   document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
   document.getElementById(id).classList.add('on');
@@ -3648,6 +3787,31 @@ function showScr(id){
   const mb=document.getElementById('muteBtn');if(mb)mb.style.display='none';
   const sp=document.getElementById('sidePanel');if(sp)sp.style.display='none';
   const db=document.getElementById('diffBadge');if(db)db.classList.remove('on');
+  // Ambient: stop any playing ambient, start screen-appropriate ambient
+  if(typeof AMBIENT!=='undefined'){
+    AMBIENT.stop();
+    if(id==='mScr'||id==='modeScr'||id==='storyScr'||id==='charScr'||id==='lvlSelScr'||id==='nScr'){
+      setTimeout(()=>{
+        if(!AUDIO.muted){
+          AUDIO.init();
+          const ctx=AUDIO.ctx;
+          if(ctx&&ctx.state==='suspended'){ctx.resume().then(()=>AMBIENT.start('menu'));}
+          else AMBIENT.start('menu');
+        }
+      },300);
+    }
+    if(id==='goScr'){
+      const sc=(typeof GS!=='undefined'&&GS)?GS.score:0;
+      setTimeout(()=>{
+        if(!AUDIO.muted){
+          AUDIO.init();
+          const ctx=AUDIO.ctx;
+          if(ctx&&ctx.state==='suspended'){ctx.resume().then(()=>AMBIENT.startScore(sc));}
+          else AMBIENT.startScore(sc);
+        }
+      },550);
+    }
+  }
 }
 function hideScrs(){
   document.getElementById('screens').style.display='none';
@@ -3680,6 +3844,32 @@ function launchGame(){
   startGame();
 }
 
+// ── RESULT GRADE ENGINE ─────────────────────────────────────
+function _setResultGrade(score,gems,warps){
+  const el_emoji=document.getElementById('rEmoji');
+  const el_grade=document.getElementById('rGrade');
+  const el_stmt=document.getElementById('rStatement');
+  const tiers=[
+    {min:200,emoji:'🏆',grade:'LEGENDARY',col:'#ffd700',
+     stmts:['You bent the cosmos itself!','The stars bow to your skill!']},
+    {min:120,emoji:'🌟',grade:'STELLAR',col:'#a0eeff',
+     stmts:['A true master of the cosmos!','Out-of-this-world performance!']},
+    {min:70,emoji:'🚀',grade:'BLAZING',col:'#ff9944',
+     stmts:["You're on fire, cosmic pilot!",'Blazing through the galaxy!']},
+    {min:35,emoji:'✨',grade:'RISING',col:'#88ffbb',
+     stmts:['Nice run, pilot!','One step closer to the stars!']},
+    {min:10,emoji:'🌙',grade:'LAUNCH',col:'#99ccff',
+     stmts:['A promising first flight!','Every legend starts somewhere!']},
+    {min:0,emoji:'💫',grade:'CRASHED!',col:'#ff6688',
+     stmts:['Better luck next time!','Even rockets need a second attempt!']},
+  ];
+  const tier=tiers.find(t=>score>=t.min)||tiers[tiers.length-1];
+  if(el_emoji){el_emoji.textContent=tier.emoji;el_emoji.style.filter='drop-shadow(0 0 18px '+tier.col+')';}
+  if(el_grade){el_grade.textContent=tier.grade;el_grade.style.color=tier.col;
+    el_grade.style.filter='drop-shadow(0 0 16px '+tier.col+'88)';}
+  if(el_stmt){el_stmt.textContent=tier.stmts[Math.floor(Math.random()*tier.stmts.length)];}
+}
+
 function showMenu(){
   AUDIO.click();paused=false;
   document.getElementById('pauseOverlay').classList.remove('on');
@@ -3695,6 +3885,7 @@ function showMenu(){
 }
 
 function startGame(){
+  if(typeof AMBIENT!=='undefined')AMBIENT.stop();
   cancelAnimationFrame(RAF_game);gameRunning=false;frame=0;paused=false;
   PARTS.pool=[];FLOATS.length=0;WARP.active=false;
   Object.keys(_pbEls).forEach(k=>{_removePBar(k);});
@@ -3713,24 +3904,22 @@ function startGame(){
   showJourneyBar(true);
   hideScrs();gameRunning=true;AUDIO.startMusic();
   startDifficultyTimer();
-  jumpCount = 0;
   gameLoop();
 }
 
 let _bgFrame=0;
-function bgLoop(){_bgFrame++;if(_bgFrame%2===0)BG.draw();RAF_bg=requestAnimationFrame(bgLoop);}
-function gameLoop(ts) {
-  if (!gameRunning || paused) return;
-  // Cap delta — stops physics exploding after tab resumes
-  const _now = ts || performance.now();
-  if (!gameLoop._last) gameLoop._last = _now;
-  gameLoop._last = _now;
+function bgLoop(){_bgFrame++;if(_bgFrame%3===0)BG.draw();RAF_bg=requestAnimationFrame(bgLoop);}
+function gameLoop(ts){
+  if(!gameRunning||paused)return;
+  // Cap delta so tab-wake physics don't explode
+  if(!gameLoop._t)gameLoop._t=ts||performance.now();
+  gameLoop._t=ts||performance.now();
   frame++;
   physics();
   drawGame();
-  RAF_game = requestAnimationFrame(gameLoop);
+  RAF_game=requestAnimationFrame(gameLoop);
 }
-gameLoop._last = 0;
+gameLoop._t=0;
 
 function endGame(silent=false){
   if(!GS)return;gameRunning=false;if(!silent){AUDIO.over();AUDIO.stopMusic();}cancelAnimationFrame(RAF_game);dLock=false;WARP.active=false;
@@ -3745,12 +3934,45 @@ function endGame(silent=false){
   PARTS.eB(gc.width/2,gc.height*.32,['💔','😵','💫','⭐','🌀']);
   drawGame();
   const sc=GS.score,isNew=sc>0&&sc>=best;const w=curWorld();
-  document.getElementById('fScore').textContent=sc;
+  _setResultGrade(sc,GS.gC,GS.warps);
+  // Count-up animation for score
+  (function countUp(){
+    const el=document.getElementById('fScore');
+    if(!el)return;
+    let cur=0;const target=sc;const dur=900;const step=16;
+    const inc=Math.max(1,Math.ceil(target/(dur/step)));
+    const t=setInterval(()=>{
+      cur=Math.min(cur+inc,target);
+      el.textContent=cur;
+      if(cur>=target)clearInterval(t);
+    },step);
+  })();
   document.getElementById('fGems').textContent=GS.gC;
   document.getElementById('fBest').textContent=best;
   document.getElementById('fWarps').textContent=GS.warps;
   document.getElementById('fLvl').textContent=w.tag;
-  document.getElementById('nbMsg').style.display=isNew?'block':'none';if(isNew)setTimeout(()=>AUDIO.record(),400);
+  document.getElementById('nbMsg').style.display=isNew?'block':'none';
+  if(isNew){
+    setTimeout(()=>AUDIO.record(),400);
+    // Confetti burst on new record
+    setTimeout(()=>{
+      const go=document.getElementById('goScr');
+      if(!go)return;
+      const colors=['#ffd700','#ff6b6b','#4ecdc4','#a8e6cf','#ff8b94','#b8d8ff','#ffe066'];
+      for(let i=0;i<38;i++){
+        const c=document.createElement('div');
+        c.className='confetti-piece';
+        c.style.left=Math.random()*100+'%';
+        c.style.background=colors[i%colors.length];
+        c.style.borderRadius=Math.random()<.5?'50%':'2px';
+        c.style.width=c.style.height=(Math.random()*7+4)+'px';
+        c.style.animationDuration=(Math.random()*1.8+1.2)+'s';
+        c.style.animationDelay=(Math.random()*.8)+'s';
+        go.appendChild(c);
+        setTimeout(()=>c.remove(),3500);
+      }
+    },300);
+  }
   lbSubmit(playerName,sc,GS.gC,curWorld().tag+' '+curWorld().name);
 
   // Result card
@@ -4215,6 +4437,195 @@ function toggleMute(){
 function toggleSoundFromUI(){
   toggleMute();
 }
+
+// ════════════════════════════════════════════════════════════════
+//  AMBIENT SPACE SOUND — soothing for menu & score screens
+// ════════════════════════════════════════════════════════════════
+const AMBIENT={
+  ctx:null,masterGain:null,nodes:[],_active:false,_raf:null,_ph:0,
+
+  _ensureCtx(){
+    if(this.ctx) return true;
+    // Reuse AUDIO context if available
+    if(AUDIO.ctx){this.ctx=AUDIO.ctx;this.masterGain=AUDIO.masterGain;return true;}
+    try{
+      this.ctx=new(window.AudioContext||window.webkitAudioContext)();
+      this.masterGain=this.ctx.createGain();
+      this.masterGain.gain.value=AUDIO.muted?0:AUDIO.volume*0.55;
+      this.masterGain.connect(this.ctx.destination);
+      return true;
+    }catch(e){return false;}
+  },
+
+  // Build a soothing layered ambient pad
+  start(mode='menu'){
+    if(!this._ensureCtx()) return;
+    this.stop();
+    if(AUDIO.muted) return;
+    this._active=true;
+    const c=this.ctx;
+    const now=c.currentTime;
+    // Use AUDIO's master gain so mute/volume is respected
+    const dest=AUDIO.masterGain||c.destination;
+    const vol=AUDIO.muted?0:AUDIO.volume;
+
+    // ── 1. Deep cosmic drone — slow sine wobble ──────────────────
+    const droneFreqs=mode==='score'?[55,82.5,110]:[40,60,80];
+    droneFreqs.forEach((f,i)=>{
+      const o=c.createOscillator();
+      const g=c.createGain();
+      const lfo=c.createOscillator();
+      const lfoG=c.createGain();
+      lfo.frequency.value=0.08+i*0.04;
+      lfo.type='sine';
+      lfoG.gain.value=f*0.015;
+      lfo.connect(lfoG);lfoG.connect(o.frequency);
+      o.type='sine';o.frequency.value=f;
+      g.gain.setValueAtTime(0,now);
+      g.gain.linearRampToValueAtTime(vol*(0.045-i*0.01),now+3.5);
+      o.connect(g);g.connect(dest);
+      o.start(now);lfo.start(now);
+      this.nodes.push(o,g,lfo,lfoG);
+    });
+
+    // ── 2. Shimmering star pad — detuned triangle cluster ────────
+    const padFreqs=mode==='score'?[329,415,523,659]:[261,330,392,523];
+    padFreqs.forEach((f,i)=>{
+      const o=c.createOscillator();
+      const g=c.createGain();
+      const lfo=c.createOscillator();
+      const lfoG=c.createGain();
+      o.type='triangle';
+      o.frequency.value=f;
+      o.detune.value=(i%2===0?1:-1)*((i+1)*3.5);
+      lfo.frequency.value=0.05+i*0.03;
+      lfoG.gain.value=vol*0.022;
+      lfo.connect(lfoG);lfoG.connect(g.gain);
+      g.gain.setValueAtTime(0,now);
+      g.gain.linearRampToValueAtTime(vol*0.028,now+4+i*0.8);
+      o.connect(g);g.connect(dest);
+      o.start(now);lfo.start(now);
+      this.nodes.push(o,g,lfo,lfoG);
+    });
+
+    // ── 3. Ethereal high shimmer — filtered noise ─────────────────
+    {
+      const bufLen=c.sampleRate*4;
+      const buf=c.createBuffer(1,bufLen,c.sampleRate);
+      const d=buf.getChannelData(0);
+      for(let i=0;i<bufLen;i++)d[i]=Math.random()*2-1;
+      const src=c.createBufferSource();src.buffer=buf;src.loop=true;
+      const filt=c.createBiquadFilter();filt.type='bandpass';
+      filt.frequency.value=mode==='score'?3200:2200;filt.Q.value=12;
+      const g=c.createGain();
+      g.gain.setValueAtTime(0,now);
+      g.gain.linearRampToValueAtTime(vol*0.012,now+5);
+      src.connect(filt);filt.connect(g);g.connect(dest);
+      src.start(now);
+      this.nodes.push(src,filt,g);
+    }
+
+    // ── 4. Occasional soft bell chimes ───────────────────────────
+    const bellFreqs=mode==='score'?[1047,1319,1568,2093]:[784,988,1175,1568];
+    let bellTimeout=null;
+    const schedBell=()=>{
+      if(!this._active)return;
+      const delay=Math.random()*5+3;
+      bellTimeout=setTimeout(()=>{
+        if(!this._active||AUDIO.muted)return;
+        const fn=bellFreqs[Math.floor(Math.random()*bellFreqs.length)];
+        const o=c.createOscillator();
+        const g=c.createGain();
+        o.type='sine';o.frequency.value=fn;
+        g.gain.setValueAtTime(vol*0.06,c.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.0001,c.currentTime+2.2);
+        o.connect(g);g.connect(dest);
+        o.start(c.currentTime);o.stop(c.currentTime+2.3);
+        schedBell();
+      },delay*1000);
+    };
+    schedBell();
+    this._bellTimeout=bellTimeout;
+  },
+
+  stop(){
+    this._active=false;
+    clearTimeout(this._bellTimeout);
+    if(this.ctx){
+      const now=this.ctx.currentTime;
+      this.nodes.forEach(n=>{
+        try{
+          if(n instanceof GainNode){
+            n.gain.cancelScheduledValues(now);
+            n.gain.setTargetAtTime(0,now,0.3);
+          } else if(n instanceof OscillatorNode||n instanceof AudioBufferSourceNode){
+            try{n.stop(now+0.5);}catch(e){}
+          }
+        }catch(e){}
+      });
+    }
+    this.nodes=[];
+  },
+
+  // For score screen: intensity depends on score tier
+  startScore(score){
+    // Pick mode: triumphant for high score, gentle for low
+    const mode=score>=120?'triumph':score>=50?'score':score>=15?'gentle':'melancholy';
+    this.start(mode);
+    // Extra layer for high scores — ascending sparkle arpeggios
+    if(score>=50&&!AUDIO.muted&&this.ctx){
+      const c=this.ctx;const dest=AUDIO.masterGain||c.destination;
+      const vol=AUDIO.volume;
+      const arpNotes=score>=120
+        ?[523,659,784,1047,1319,1568]  // triumphant high sparkling
+        :score>=80
+        ?[392,494,587,784,988]          // cosmic hero
+        :[329,415,523,659];             // rising star
+      let arpIdx=0;
+      const playArp=()=>{
+        if(!this._active||AUDIO.muted)return;
+        const f=arpNotes[arpIdx%arpNotes.length];arpIdx++;
+        const o=c.createOscillator();const g=c.createGain();
+        o.type='triangle';o.frequency.value=f;
+        g.gain.setValueAtTime(vol*0.04,c.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.0001,c.currentTime+0.5);
+        o.connect(g);g.connect(dest);
+        o.start(c.currentTime);o.stop(c.currentTime+0.55);
+        this.nodes.push(o,g);
+        this._arpTimeout=setTimeout(playArp,280);
+      };
+      setTimeout(playArp,600);
+    }
+  }
+};
+
+// ── FIRST INTERACTION AMBIENT TRIGGER ───────────────────────────
+// Browsers block AudioContext until a user gesture. We listen for
+// the first tap/click/key and then start the menu ambient.
+(function(){
+  let _ambientStarted = false;
+  function _tryStartMenuAmbient(){
+    if(_ambientStarted) return;
+    // Only start if we're on a menu screen (not in-game)
+    const active = document.querySelector('.scr.on');
+    if(!active) return;
+    const menuIds = ['mScr','modeScr','storyScr','charScr','lvlSelScr','nScr','lbScr','customScr'];
+    if(!menuIds.includes(active.id)) return;
+    _ambientStarted = true;
+    AUDIO.init();
+    // Resume suspended AudioContext (required by browsers)
+    if(AUDIO.ctx && AUDIO.ctx.state === 'suspended'){
+      AUDIO.ctx.resume().then(()=>{ if(!AUDIO.muted) AMBIENT.start('menu'); });
+    } else {
+      if(!AUDIO.muted) AMBIENT.start('menu');
+    }
+    // Remove listeners after first fire
+    ['click','touchstart','keydown','touchend'].forEach(ev=>
+      document.removeEventListener(ev, _tryStartMenuAmbient));
+  }
+  ['click','touchstart','keydown','touchend'].forEach(ev=>
+    document.addEventListener(ev, _tryStartMenuAmbient, {once:false, passive:true}));
+})();
 
 BG.init();bgLoop();showScr('mScr');initMenuStars();
 </script>
