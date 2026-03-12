@@ -139,24 +139,6 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   transition:transform .15s,box-shadow .15s;}
 .launch-btn:hover{transform:scale(1.07);box-shadow:0 12px 40px rgba(0,130,255,.7);}
 
-/* menu title */
-.gtitle{font-family:'Fredoka One',cursive;font-size:clamp(52px,9vw,110px);
-  background:linear-gradient(135deg,#fff 0%,#b0efff 20%,#60dfff 50%,#ffe89a 80%,#ffd 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 32px rgba(60,200,255,.65));
-  animation:tBnc 2s ease-in-out infinite;margin-bottom:4px;}
-
-.gsub{font-family:'Fredoka One',cursive;font-size:15px;color:rgba(185,220,255,.55);
-  letter-spacing:5px;margin-bottom:18px;}
-.bestLbl{font-family:'Fredoka One',cursive;font-size:13px;color:rgba(255,215,80,.85);
-  margin-bottom:16px;letter-spacing:2px;}
-.sbtn{font-family:'Fredoka One',cursive;font-size:22px;padding:15px 64px;border:none;
-  cursor:pointer;border-radius:60px;
-  background:linear-gradient(135deg,#2ef 0%,#06f 50%,#52f 100%);
-  color:#fff;letter-spacing:2px;box-shadow:0 8px 28px rgba(0,130,255,.5);
-  transition:transform .15s;}
-.sbtn:hover{transform:scale(1.07);}
-.htxt{font-size:11px;color:rgba(255,255,255,.24);margin-top:10px;letter-spacing:1px;}
 .guide{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0;
   max-width:520px;width:100%;}
 .gcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
@@ -194,99 +176,6 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 .goSlabel{font-family:'Fredoka One',cursive;font-size:12px;color:rgba(255,255,255,.35);
   letter-spacing:3px;margin-bottom:4px;}
 
-.statsRow{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;justify-content:center;}
-.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
-  border-radius:12px;padding:9px 16px;}
-.stat-l{font-size:8px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;}
-.stat-v{font-family:'Fredoka One',cursive;font-size:20px;
-  color:#ffd700;text-shadow:0 0 8px rgba(255,200,0,.5);}
-.btnRow{display:flex;gap:11px;}
-.gbtn{font-family:'Fredoka One',cursive;font-size:16px;padding:12px 34px;
-  border:none;cursor:pointer;border-radius:48px;letter-spacing:1px;transition:all .15s;}
-.gbtn.p{background:linear-gradient(135deg,#2ef,#06f);color:#fff;box-shadow:0 5px 20px rgba(0,130,255,.4);}
-.gbtn.p:hover{transform:scale(1.08);}
-.gbtn.s{background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.12);}
-.gbtn.s:hover{background:rgba(255,255,255,.12);color:#fff;}
-.newBest{font-family:'Fredoka One',cursive;font-size:13px;color:#ffd700;
-  letter-spacing:2px;margin-bottom:8px;animation:shine 0.9s ease-in-out infinite;}
-@keyframes shine{0%,100%{opacity:1;}50%{opacity:.3;}}
-.journey-txt{font-family:'Fredoka One',cursive;font-size:11px;
-  color:rgba(255,255,255,.3);letter-spacing:2px;margin-bottom:14px;
-  max-width:320px;line-height:1.8;}
-
-/* ══ extra styles ══ */
-.back-link{font-size:11px;color:rgba(255,255,255,.2);cursor:pointer;letter-spacing:2px;margin-top:10px;transition:color .2s;}
-.back-link:hover{color:rgba(255,255,255,.55);}
-.feat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:9px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;overflow:hidden;}
-.feat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);}
-.feat-icon{font-size:22px;}.feat-name{font-family:'Fredoka One',cursive;font-size:9px;color:rgba(255,255,255,.75);letter-spacing:1px;text-transform:uppercase;}.feat-desc{font-size:8px;color:rgba(255,255,255,.32);text-align:center;}
-.gtitle-wrap{position:relative;margin-bottom:2px;}
-.gtitle-orbit{position:absolute;inset:-18px;border-radius:50%;border:1px solid rgba(80,200,255,.18);animation:orbitSpin 8s linear infinite;}
-.gtitle-orbit::after{content:'✦';position:absolute;top:50%;left:0;transform:translate(-50%,-50%);color:rgba(80,200,255,.7);font-size:10px;}
-@keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-
-/* ── MENU FLOATING STARS particle effect ── */
-#menuParticles{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.mstar{position:absolute;border-radius:50%;animation:mStarFloat linear infinite;}
-@keyframes mStarFloat{0%{opacity:0;transform:translateY(0) scale(0);}10%{opacity:1;}80%{opacity:.7;}100%{opacity:0;transform:translateY(-60vh) scale(.4);}}
-
-/* ── SCORE PAGE enhancements ── */
-#goScr .score-ring{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:0;
-  border:1.5px solid rgba(100,180,255,.12);
-  animation:scoreRingPulse 3s ease-in-out infinite;
-}
-#goScr .score-ring:nth-child(2){width:380px;height:380px;animation-delay:.8s;border-color:rgba(80,140,255,.07);}
-@keyframes scoreRingPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6;}50%{transform:translate(-50%,-50%) scale(1.08);opacity:1;}}
-
-/* New Best Record flash */
-.newBest{
-  font-family:'Fredoka One',cursive;font-size:clamp(14px,3vw,22px);
-  background:linear-gradient(90deg,#ffd700,#ff8c00,#ffd700);
-  background-size:200%;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  animation:goldShimmer 1.4s linear infinite,recordPop .5s cubic-bezier(.34,1.56,.64,1) both;
-  filter:drop-shadow(0 0 14px rgba(255,200,0,.65));
-  margin:6px 0;
-}
-@keyframes goldShimmer{0%{background-position:0%;}100%{background-position:200%;}}
-@keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
-
-/* Score number count-up animation */
-
-/* Stat cards in game over */
-.statsRow{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;justify-content:center;}
-.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;padding:8px 16px;min-width:72px;text-align:center;
-  transition:transform .2s;backdrop-filter:blur(6px);}
-.stat:hover{transform:scale(1.05);}
-.stat-l{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
-.stat-v{font-family:'Fredoka One',cursive;font-size:22px;color:#fff;text-shadow:0 0 10px rgba(120,200,255,.6);}
-
-/* Journey trail */
-.journey-txt{font-size:10px;color:rgba(180,200,255,.45);letter-spacing:1px;margin:4px 0 8px;max-width:340px;text-align:center;line-height:1.6;}
-
-/* Confetti particles on new best */
-@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
-.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;animation:confettiFall linear forwards;border-radius:2px;pointer-events:none;z-index:20;}
-.gtitle{font-family:'Fredoka One',cursive;font-size:clamp(48px,9vw,108px);background:linear-gradient(135deg,#fff 0%,#b0efff 18%,#60dfff 45%,#ffe89a 75%,#ffd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 52px rgba(60,200,255,.95)) drop-shadow(0 0 20px rgba(255,215,0,.55));animation:tBnc 2.2s ease-in-out infinite;position:relative;z-index:1;}
-.gsub{font-family:'Fredoka One',cursive;font-size:14px;color:rgba(185,220,255,.5);letter-spacing:6px;margin-bottom:12px;}
-.bestLbl{font-family:'Fredoka One',cursive;font-size:13px;background:rgba(0,0,0,.5);border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:6px 20px;color:rgba(255,215,80,.9);letter-spacing:2px;margin-bottom:14px;box-shadow:0 0 18px rgba(255,200,0,.12);}
-.sbtn{font-family:'Fredoka One',cursive;font-size:22px;padding:15px 64px;border:none;cursor:pointer;border-radius:60px;background:linear-gradient(135deg,#2ef 0%,#06f 50%,#52f 100%);color:#fff;letter-spacing:2px;box-shadow:0 8px 28px rgba(0,130,255,.5);animation:btnPulse 2s ease-in-out infinite;transition:transform .15s;}
-.sbtn:hover{transform:scale(1.07);}
-@keyframes btnPulse{0%,100%{box-shadow:0 8px 28px rgba(0,130,255,.5),0 0 0 0 rgba(80,200,255,.3);}50%{box-shadow:0 8px 40px rgba(0,130,255,.65),0 0 0 14px rgba(80,200,255,0);}}
-.mode-card{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:22px;padding:24px 18px;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;overflow:hidden;}
-.mode-card::before{content:'';position:absolute;inset:0;border-radius:22px;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.06) 0%,rgba(0,0,0,0) 70%);}
-.mode-card:hover{transform:translateY(-4px) scale(1.03);border-color:rgba(255,255,255,.28);}
-.mode-card.story{border-color:rgba(100,200,255,.3);}.mode-card.story:hover{border-color:rgba(100,200,255,.6);box-shadow:0 12px 40px rgba(60,180,255,.3);}
-.mode-card.custom{border-color:rgba(255,160,80,.3);}.mode-card.custom:hover{border-color:rgba(255,160,80,.6);box-shadow:0 12px 40px rgba(255,160,80,.25);}
-.mc-badge{position:absolute;top:10px;right:12px;font-size:9px;font-family:'Fredoka One',cursive;letter-spacing:1px;padding:3px 8px;border-radius:20px;}
-.mc-badge.new{background:rgba(80,255,120,.2);color:rgba(120,255,140,.9);border:1px solid rgba(80,255,120,.3);}
-.mc-badge.hot{background:rgba(255,120,60,.2);color:rgba(255,150,80,.9);border:1px solid rgba(255,120,60,.3);}
-.sw-chip{font-family:'Fredoka One',cursive;font-size:10px;padding:4px 10px;border-radius:30px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55);}
-.sw-chip.active{background:rgba(80,200,255,.15);border-color:rgba(80,200,255,.4);color:rgba(180,230,255,.9);}
-.cw-card{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.09);border-radius:16px;padding:12px 8px;cursor:pointer;transition:all .18s;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;}
 .cw-card:hover{transform:scale(1.05);border-color:rgba(255,255,255,.25);}
 .cw-card.sel{border-color:rgba(100,220,255,.6);background:rgba(60,180,255,.12);box-shadow:0 0 20px rgba(60,180,255,.2);}
 .cw-icon{font-size:26px;}.cw-name{font-family:'Fredoka One',cursive;font-size:10px;color:rgba(255,255,255,.7);letter-spacing:1px;text-align:center;}
@@ -528,51 +417,6 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 @keyframes tBnc{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
 @keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
-/* ── MENU FLOATING STARS particle effect ── */
-#menuParticles{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.mstar{position:absolute;border-radius:50%;animation:mStarFloat linear infinite;}
-@keyframes mStarFloat{0%{opacity:0;transform:translateY(0) scale(0);}10%{opacity:1;}80%{opacity:.7;}100%{opacity:0;transform:translateY(-60vh) scale(.4);}}
-
-/* ── SCORE PAGE enhancements ── */
-#goScr .score-ring{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:0;
-  border:1.5px solid rgba(100,180,255,.12);
-  animation:scoreRingPulse 3s ease-in-out infinite;
-}
-#goScr .score-ring:nth-child(2){width:380px;height:380px;animation-delay:.8s;border-color:rgba(80,140,255,.07);}
-@keyframes scoreRingPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6;}50%{transform:translate(-50%,-50%) scale(1.08);opacity:1;}}
-
-/* New Best Record flash */
-.newBest{
-  font-family:'Fredoka One',cursive;font-size:clamp(14px,3vw,22px);
-  background:linear-gradient(90deg,#ffd700,#ff8c00,#ffd700);
-  background-size:200%;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  animation:goldShimmer 1.4s linear infinite,recordPop .5s cubic-bezier(.34,1.56,.64,1) both;
-  filter:drop-shadow(0 0 14px rgba(255,200,0,.65));
-  margin:6px 0;
-}
-@keyframes goldShimmer{0%{background-position:0%;}100%{background-position:200%;}}
-@keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
-
-/* Score number count-up animation */
-
-/* Stat cards in game over */
-.statsRow{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;justify-content:center;}
-.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;padding:8px 16px;min-width:72px;text-align:center;
-  transition:transform .2s;backdrop-filter:blur(6px);}
-.stat:hover{transform:scale(1.05);}
-.stat-l{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
-.stat-v{font-family:'Fredoka One',cursive;font-size:22px;color:#fff;text-shadow:0 0 10px rgba(120,200,255,.6);}
-
-/* Journey trail */
-.journey-txt{font-size:10px;color:rgba(180,200,255,.45);letter-spacing:1px;margin:4px 0 8px;max-width:340px;text-align:center;line-height:1.6;}
-
-/* Confetti particles on new best */
-@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
-.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;animation:confettiFall linear forwards;border-radius:2px;pointer-events:none;z-index:20;}
 .gsub{font-family:'Fredoka One',cursive;font-size:14px;color:rgba(200,230,255,.65);
   letter-spacing:6px;margin-bottom:12px;text-shadow:0 0 12px rgba(180,220,255,.35);}
 /* Floating planet row */
@@ -948,6 +792,66 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
   animation:crownFloat 1.4s ease-in-out infinite;}
 @keyframes crownFloat{0%,100%{transform:translateY(0) rotate(-6deg) scale(1);}
   50%{transform:translateY(-9px) rotate(6deg) scale(1.12);}}
+
+
+/* Confetti on new record */
+@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
+.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;animation:confettiFall linear forwards;border-radius:2px;pointer-events:none;z-index:20;}
+/* ── LEADERBOARD FILTER TABS ── */
+.lb-tab{font-family:'Fredoka One',cursive;font-size:11px;padding:6px 16px;
+  border:1.5px solid rgba(255,215,0,.22);border-radius:30px;
+  background:rgba(255,215,0,.05);color:rgba(255,215,0,.55);
+  cursor:pointer;letter-spacing:1px;transition:all .18s;}
+.lb-tab:hover{background:rgba(255,215,0,.12);color:rgba(255,215,0,.85);}
+.lb-tab.active{background:rgba(255,215,0,.18);color:#ffd700;
+  border-color:rgba(255,215,0,.55);box-shadow:0 0 12px rgba(255,215,0,.2);}
+/* Difficulty chip on leaderboard entries */
+.lb-lvl-chip{font-family:'Fredoka One',cursive;font-size:9px;padding:2px 8px;
+  border-radius:20px;letter-spacing:1px;white-space:nowrap;display:inline-block;}
+
+
+/* ══ GAME OVER — stat cards & buttons ══ */
+.statsRow{display:flex;gap:8px;margin:10px 0 6px;flex-wrap:wrap;justify-content:center;}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:8px 16px;min-width:70px;text-align:center;
+  backdrop-filter:blur(6px);transition:transform .2s;}
+.stat:hover{transform:scale(1.04);}
+.stat-l{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.stat-v{font-family:'Fredoka One',cursive;font-size:20px;color:#fff;text-shadow:0 0 8px rgba(120,200,255,.5);}
+.goSlabel{font-family:'Fredoka One',cursive;font-size:11px;color:rgba(255,255,255,.32);
+  letter-spacing:4px;text-transform:uppercase;margin-bottom:2px;}
+.go-playername{font-family:'Fredoka One',cursive;font-size:clamp(20px,4vw,38px);
+  letter-spacing:3px;margin-bottom:5px;
+  animation:nameFlash 0.55s ease-in-out 4 forwards;}
+@keyframes nameFlash{
+  0%{opacity:1;transform:scale(1);}
+  40%{opacity:.25;transform:scale(.95);}
+  70%{opacity:1;transform:scale(1.05);}
+  100%{opacity:1;transform:scale(1);}
+}
+.go-playername.glow-steady{animation:nameGlowSteady 2.5s ease-in-out infinite;}
+@keyframes nameGlowSteady{
+  0%,100%{filter:drop-shadow(0 0 6px currentColor);}
+  50%{filter:drop-shadow(0 0 16px currentColor);}
+}
+.btnRow{display:flex;gap:10px;margin-top:6px;}
+.gbtn{font-family:'Fredoka One',cursive;font-size:16px;padding:12px 32px;
+  border:none;cursor:pointer;border-radius:48px;letter-spacing:1px;transition:all .15s;}
+.gbtn.p{background:linear-gradient(135deg,#2ef,#06f);color:#fff;
+  box-shadow:0 5px 20px rgba(0,130,255,.4);}
+.gbtn.p:hover{transform:scale(1.07);}
+.gbtn.s{background:rgba(255,255,255,.07);color:rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.13);}
+.gbtn.s:hover{background:rgba(255,255,255,.13);color:#fff;}
+.journey-txt{font-size:10px;color:rgba(180,200,255,.4);letter-spacing:1px;
+  margin:4px 0 8px;max-width:320px;text-align:center;line-height:1.6;}
+.newBest{font-family:'Fredoka One',cursive;font-size:clamp(13px,2.5vw,20px);
+  background:linear-gradient(90deg,#ffd700,#ff8c00,#ffd700);background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:goldShimmer 1.4s linear infinite,recordPop .5s cubic-bezier(.34,1.56,.64,1) both;
+  filter:drop-shadow(0 0 12px rgba(255,200,0,.6));margin:5px 0;}
+@keyframes goldShimmer{0%{background-position:0%;}100%{background-position:200%;}}
+@keyframes recordPop{from{transform:scale(0) rotate(-8deg);}to{transform:scale(1) rotate(0deg);}}
 
 </style>
 </head>
@@ -1326,14 +1230,23 @@ canvas{display:block;position:absolute;top:0;left:0;touch-action:none;}
 
   <!-- ── LEADERBOARD ── -->
   <div class="scr" id="lbScr" style="background:radial-gradient(ellipse at 50% 30%,rgba(4,0,30,.98) 0%,rgba(0,0,0,1) 100%);">
-    <div style="font-family:'Fredoka One',cursive;font-size:clamp(28px,5vw,54px);background:linear-gradient(135deg,#ffd700,#fa0,#ffd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 28px rgba(255,215,0,.75));letter-spacing:3px;margin-bottom:4px;">🏆 LEADERBOARD</div>
-    <div style="font-size:11px;color:rgba(255,200,80,.4);letter-spacing:3px;margin-bottom:20px;">TOP 10 COSMIC PILOTS</div>
-    <div style="background:rgba(0,0,0,.5);border:1px solid rgba(255,215,0,.18);border-radius:22px;padding:18px 24px;max-width:480px;width:100%;max-height:420px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,215,0,.3) transparent;">
+    <div style="font-family:'Fredoka One',cursive;font-size:clamp(28px,5vw,54px);background:linear-gradient(135deg,#ffd700,#fa0,#ffd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 28px rgba(255,215,0,.75));letter-spacing:3px;margin-bottom:2px;">🏆 LEADERBOARD</div>
+    <div style="font-size:11px;color:rgba(255,200,80,.4);letter-spacing:3px;margin-bottom:12px;">TOP 10 COSMIC PILOTS · WITH DIFFICULTY</div>
+    <!-- Level filter tabs -->
+    <div id="lbFilterRow" style="display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:14px;max-width:480px;">
+      <button class="lb-tab active" data-filter="all"    onclick="lbFilter('all')">🌟 ALL</button>
+      <button class="lb-tab"        data-filter="AURORA"     onclick="lbFilter('AURORA')">🌌 EASY</button>
+      <button class="lb-tab"        data-filter="NEBULA"     onclick="lbFilter('NEBULA')">🌠 MEDIUM</button>
+      <button class="lb-tab"        data-filter="GALAXY"     onclick="lbFilter('GALAXY')">🌀 HARD</button>
+      <button class="lb-tab"        data-filter="BLACKHOLE"  onclick="lbFilter('BLACKHOLE')">🕳 EXTREME</button>
+    </div>
+    <div style="background:rgba(0,0,0,.5);border:1px solid rgba(255,215,0,.18);border-radius:22px;padding:16px 20px;max-width:480px;width:100%;max-height:390px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,215,0,.3) transparent;">
       <div id="lbContent" style="width:100%;"></div>
     </div>
-    <div style="display:flex;gap:12px;margin-top:16px;">
+    <div style="display:flex;gap:12px;margin-top:14px;">
       <button class="gbtn p" onclick="showModeSelect()">🚀 PLAY</button>
-      <button class="gbtn s" onclick="showMenu()">🏠 Menu</button>
+      <button class="gbtn s" onclick="clearLbConfirm()" style="font-size:12px;padding:10px 18px;color:rgba(255,80,80,.5);border-color:rgba(255,80,80,.2);">🗑 CLEAR</button>
+      <button class="gbtn s" onclick="showMenu()">🏠 MENU</button>
     </div>
   </div>
 
@@ -2062,7 +1975,7 @@ const BG={
         a.ph+=.006;a.x-=a.spd;if(a.x+a.w<0)a.x=W+a.w*.5;
         const ay=a.y+Math.sin(a.ph)*18;
         const ag=bg.createLinearGradient(0,ay-a.h*.5,0,ay+a.h*1.5);
-        const alpha=a.a*(.7+.3*Math.sin(a.ph*2));
+        const alpha=a.a*(.3+.15*Math.sin(a.ph*2));
         ag.addColorStop(0,'rgba(0,0,0,0)');
         ag.addColorStop(.3,`hsla(${a.hue},80%,65%,${alpha})`);
         ag.addColorStop(.6,`hsla(${(a.hue+40)%360},70%,55%,${alpha*.6})`);
@@ -2090,7 +2003,7 @@ const BG={
           bg.save();bg.scale(1,n.ry/n.rx);const ny2=n.y*n.rx/n.ry;
           const nh=(n.hue+worldIdx*42)%360;
           const g=srgd(bg,n.x,ny2,0,n.x,ny2,n.rx);
-          const la=[.025,.045,.07][layer];
+          const la=[.012,.022,.035][layer];
           g.addColorStop(0,`hsla(${nh},85%,65%,${clp(n.a*2,0,la*3)})`);
           g.addColorStop(.4,`hsla(${(nh+35)%360},72%,45%,${clp(n.a*1.5,0,la*2)})`);
           g.addColorStop(.75,`hsla(${(nh+70)%360},60%,30%,${clp(n.a,0,la)})`);
@@ -2245,19 +2158,17 @@ const WARP={
     // Rings
     this.rings.forEach(r=>{
       r.r+=r.spd*(1+t*2.5);if(r.r>Math.max(W,H)*.9)r.r=rnd(5,30);
-      ctx.strokeStyle=`hsla(${(r.hue+hue*.4+this.phase*3)%360},100%,72%,${r.al*(1-t*.55)})`;
+      ctx.strokeStyle=`hsla(${(r.hue+hue*.4+this.phase*3)%360},60%,60%,${r.al*(1-t*.55)*.35})`;
       ctx.lineWidth=r.th;ctx.beginPath();sarc(ctx,cx,cy,Math.max(.5,r.r),0,PI2);ctx.stroke();
     });
     // Streaks
     this.streaks.forEach(s=>{
       s.x-=s.spd;if(s.x+s.len<0){s.x=W+10;s.y=rnd(0,H);}
       const sg=ctx.createLinearGradient(s.x,s.y,s.x+s.len,s.y);
-      sg.addColorStop(0,`hsla(${(s.hue+hue)%360},100%,85%,${s.al})`);sg.addColorStop(1,'rgba(0,0,0,0)');
+      sg.addColorStop(0,`hsla(${(s.hue+hue)%360},60%,75%,${s.al*.3})`);sg.addColorStop(1,'rgba(0,0,0,0)');
       ctx.strokeStyle=sg;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x+s.len,s.y);ctx.stroke();
     });
-    // Centre flash
-    const fa=Math.max(0,.75-t*1.15);
-    if(fa>0){const fl=srgd(ctx,cx,cy,0,cx,cy,180);fl.addColorStop(0,`hsla(${hue},100%,97%,${fa})`);fl.addColorStop(.5,`hsla(${hue},100%,60%,${fa*.5})`);fl.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=fl;ctx.fillRect(0,0,W,H);}
+    // centre flash removed
     if(this.phase>=50){this.active=false;if(this.onDone)this.onDone();}
   }
 };
@@ -2431,7 +2342,7 @@ function mkPlat(x,y,w,ci,type='normal'){return{x,y,w,h:30,ci,type,ph:rnd(0,PI2),
 function drawGem(g){
   if(g.ok)return;g.bob+=.07;g.spin+=.05;const by=g.y+Math.sin(g.bob)*6;
   ctx.save();ctx.translate(g.x,by);ctx.rotate(g.spin);
-  ctx.shadowColor=`hsl(${g.hue},100%,65%)`;ctx.shadowBlur=16;
+  ctx.shadowColor=`hsl(${g.hue},80%,60%)`;ctx.shadowBlur=6;
   const s=g.r;
   // Outer sparkle ring
   ctx.strokeStyle=`hsla(${g.hue},100%,80%,.4)`;ctx.lineWidth=1.5;
@@ -2467,25 +2378,25 @@ function drawPU(p){
 
   // ── Outer aura halo (wide, soft, very visible) ──────────────
   const aura=srgd(ctx,0,0,0,0,0,46);
-  aura.addColorStop(0, `hsla(${h},100%,70%,${.28+.14*pulse})`);
-  aura.addColorStop(.5,`hsla(${h},100%,55%,${.14+.08*pulse})`);
+  aura.addColorStop(0, `hsla(${h},100%,70%,${.10+.05*pulse})`);
+  aura.addColorStop(.5,`hsla(${h},100%,55%,${.05+.03*pulse})`);
   aura.addColorStop(1, 'rgba(0,0,0,0)');
   ctx.fillStyle=aura; ctx.beginPath(); sarc(ctx,0,0,46,0,PI2); ctx.fill();
 
   // ── Two spinning dashed rings (inner + outer) ───────────────
   ctx.save(); ctx.rotate(p.puls*.45);
-  ctx.strokeStyle=`hsla(${h},100%,72%,${.7+.3*pulse})`;
+  ctx.strokeStyle=`hsla(${h},60%,72%,${.25+.1*pulse})`;
   ctx.lineWidth=2.5; ctx.setLineDash([8,5]);
   ctx.beginPath(); sarc(ctx,0,0,34,0,PI2); ctx.stroke();
   ctx.restore();
   ctx.save(); ctx.rotate(-p.puls*.28);
-  ctx.strokeStyle=`hsla(${h},100%,88%,${.35+.2*pulse})`;
+  ctx.strokeStyle=`hsla(${h},60%,80%,${.12+.06*pulse})`;
   ctx.lineWidth=1.5; ctx.setLineDash([4,8]);
   ctx.beginPath(); sarc(ctx,0,0,28,0,PI2); ctx.stroke();
   ctx.setLineDash([]); ctx.restore();
 
   // ── Core orb: bright centre, colour fade ────────────────────
-  ctx.shadowColor=`hsl(${h},100%,65%)`; ctx.shadowBlur=28+18*pulse;
+  ctx.shadowColor=`hsl(${h},100%,65%)`; ctx.shadowBlur=8;
   const og=srgd(ctx,0,-6,2,0,0,20);
   og.addColorStop(0,'rgba(255,255,255,1)');
   og.addColorStop(.28,`hsla(${h},100%,80%,0.95)`);
@@ -2498,8 +2409,8 @@ function drawPU(p){
   for(let i=0;i<6;i++){
     const a=i*PI2/6+p.puls*.7;
     const sr=26+3*pulse;
-    ctx.shadowColor=`hsl(${h},100%,80%)`; ctx.shadowBlur=8;
-    ctx.fillStyle=`hsla(${h},100%,85%,${.7+.3*pulse})`;
+    ctx.shadowBlur=0;
+    ctx.fillStyle=`hsla(${h},60%,80%,${.35+.1*pulse})`;
     ctx.beginPath(); sarc(ctx,Math.cos(a)*sr,Math.sin(a)*sr,2.8,0,PI2); ctx.fill();
   }
   ctx.shadowBlur=0;
@@ -2546,7 +2457,7 @@ function drawHaz(h){
     ctx.beginPath();sell(ctx,-8,22+walk,7,5,0,0,PI2);ctx.fill();
     ctx.beginPath();sell(ctx,8,22-walk,7,5,0,0,PI2);ctx.fill();
     // Body blob
-    ctx.shadowColor='#00ff88';ctx.shadowBlur=28;
+    ctx.shadowColor='#00ff88';ctx.shadowBlur=6;
     const bg=srgd(ctx,0,-12,4,0,-4,22);
     bg.addColorStop(0,'#88ffaa');bg.addColorStop(.45,'#22cc55');bg.addColorStop(1,'#0a5520');
     ctx.fillStyle=bg;
@@ -2591,11 +2502,11 @@ function drawHaz(h){
     const pulse=.6+.4*Math.sin(h.ph*4);
     // Wide danger halo on floor
     const halo=ctx.createRadialGradient(cx,base,0,cx,base,42);
-    halo.addColorStop(0,`rgba(255,0,0,${.22*pulse})`);
+    halo.addColorStop(0,`rgba(255,0,0,${.08*pulse})`);
     halo.addColorStop(1,'rgba(255,0,0,0)');
     ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,cx,base,42,0,PI2); ctx.fill();
     // Base plate
-    ctx.shadowColor='#ff0000'; ctx.shadowBlur=24*pulse;
+    ctx.shadowColor='#ff0000'; ctx.shadowBlur=6;
     ctx.fillStyle='rgba(80,0,0,.85)'; rrect(ctx,cx-20,base-2,40,10,3); ctx.fill();
     // Centre spike — bright tip fade to deep red
     const sg=ctx.createLinearGradient(cx,tip,cx,base);
@@ -2622,11 +2533,11 @@ function drawHaz(h){
     const r=22; ctx.translate(h.x,h.y);
     // Danger halo (static, behind spin)
     const halo=srgd(ctx,0,0,0,0,0,48);
-    halo.addColorStop(0,`rgba(255,100,0,${.26+.14*Math.sin(h.ph*2)})`);
+    halo.addColorStop(0,`rgba(255,100,0,${.08+.04*Math.sin(h.ph*2)})`);
     halo.addColorStop(1,'rgba(255,60,0,0)');
     ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,0,0,48,0,PI2); ctx.fill();
     ctx.rotate(h.ph*.5);
-    ctx.shadowColor='#ff6600'; ctx.shadowBlur=26;
+    ctx.shadowColor='#ff6600'; ctx.shadowBlur=5;
     const grad=srgd(ctx,-7,-7,2,0,0,r*1.3);
     grad.addColorStop(0,'#ffe8c0'); grad.addColorStop(.3,'#e8a060'); grad.addColorStop(1,'#3a1005');
     ctx.fillStyle=grad;
@@ -2648,11 +2559,11 @@ function drawHaz(h){
     const r=16; ctx.translate(h.x,h.y);
     // Wide flame halo
     const halo=srgd(ctx,0,0,0,0,0,52);
-    halo.addColorStop(0,`rgba(255,140,0,${.3+.15*Math.sin(h.ph*3)})`);
-    halo.addColorStop(.55,'rgba(255,60,0,.12)');
+    halo.addColorStop(0,`rgba(255,140,0,${.10+.05*Math.sin(h.ph*3)})`);
+    halo.addColorStop(.55,'rgba(255,60,0,.04)');
     halo.addColorStop(1,'rgba(255,0,0,0)');
     ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,0,0,52,0,PI2); ctx.fill();
-    ctx.shadowColor='#ff8800'; ctx.shadowBlur=30;
+    ctx.shadowColor='#ff8800'; ctx.shadowBlur=5;
     // Tail — three layered flame wedges
     [['rgba(255,30,0,0)',0],['rgba(255,110,0,.45)',.45],['rgba(255,220,50,.9)',1]].forEach(([col,w])=>{
       const t=ctx.createLinearGradient(-88,0,0,0);
@@ -2679,23 +2590,23 @@ function drawHaz(h){
     ctx.translate(h.x,h.y);
     // Danger halo
     const halo=srgd(ctx,0,0,0,0,0,44);
-    halo.addColorStop(0,`rgba(60,140,255,${.2+.12*Math.sin(h.ph*2)})`);
+    halo.addColorStop(0,`rgba(60,140,255,${.06+.03*Math.sin(h.ph*2)})`);
     halo.addColorStop(1,'rgba(0,60,255,0)');
     ctx.fillStyle=halo; ctx.beginPath(); sarc(ctx,0,0,44,0,PI2); ctx.fill();
     ctx.rotate(h.ph*.5);
-    ctx.shadowColor='#2266ff'; ctx.shadowBlur=20;
+    ctx.shadowColor='#2266ff'; ctx.shadowBlur=5;
     ctx.fillStyle='rgba(155,175,200,.97)'; rrect(ctx,-22,-16,44,32,5); ctx.fill();
     ctx.strokeStyle='rgba(100,160,255,.7)'; ctx.lineWidth=2;
     rrect(ctx,-22,-16,44,32,5); ctx.stroke();
     // Solar panels — bright blue
-    ctx.shadowColor='#44aaff'; ctx.shadowBlur=12;
+    ctx.shadowColor='#44aaff'; ctx.shadowBlur=4;
     ctx.fillStyle='rgba(30,90,200,.9)'; rrect(ctx,-38,-7,15,14,3); ctx.fill();
     rrect(ctx,23,-7,15,14,3); ctx.fill();
     ctx.strokeStyle='rgba(100,200,255,.5)'; ctx.lineWidth=1;
     rrect(ctx,-38,-7,15,14,3); ctx.stroke();
     rrect(ctx,23,-7,15,14,3); ctx.stroke();
     // Danger eye — vivid red pulsing
-    ctx.shadowColor='#ff0000'; ctx.shadowBlur=22+10*Math.sin(h.ph*4);
+    ctx.shadowColor='#ff0000'; ctx.shadowBlur=5;
     ctx.fillStyle='#ff1111';
     ctx.beginPath(); sarc(ctx,0,-1,9,0,PI2); ctx.fill();
     ctx.shadowColor='#ff8888'; ctx.shadowBlur=5; ctx.fillStyle='#ffbbbb';
@@ -2707,10 +2618,10 @@ function drawHaz(h){
     const bob=Math.sin(h.ph*1.1)*6;
     ctx.translate(h.x,h.y+bob);
     const r=30+7*pulse;
-    ctx.shadowColor='#9933ff';ctx.shadowBlur=34*pulse;
+    ctx.shadowColor='#9933ff';ctx.shadowBlur=5;
     // Ghost body
     const g=srgd(ctx,0,-12,3,0,0,r);
-    g.addColorStop(0,`rgba(130,0,255,${.92+.08*pulse})`);g.addColorStop(.5,`rgba(70,0,160,.85)`);g.addColorStop(1,'rgba(0,0,0,0)');
+    g.addColorStop(0,`rgba(130,0,255,${.75+.05*pulse})`);g.addColorStop(.5,`rgba(70,0,160,.85)`);g.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle=g;
     ctx.beginPath();ctx.arc(0,-5,r*.72,Math.PI,0,false);
     const wv=5;const steps=8;
@@ -2836,7 +2747,7 @@ const PORTAL={active:false,x:0,y:0,ph:0,ring:[],beams:[],bT:0,
     pg.addColorStop(.75,`hsla(${hue},100%,40%,.5)`);pg.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle=pg;ctx.save();ctx.scale(1,.45);ctx.beginPath();sarc(ctx,0,0,aW*.7,0,PI2);ctx.fill();ctx.restore();
     // Bright centre star
-    ctx.shadowColor=`hsl(${hue},100%,90%)`;ctx.shadowBlur=22;
+    ctx.shadowColor=`hsl(${hue},80%,80%)`;ctx.shadowBlur=6;
     const cg=srgd(ctx,0,0,0,0,0,22);cg.addColorStop(0,'rgba(255,255,255,.98)');cg.addColorStop(.4,`hsla(${hue},100%,75%,.7)`);cg.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle=cg;ctx.beginPath();sarc(ctx,0,0,22,0,PI2);ctx.fill();ctx.shadowBlur=0;
     ctx.restore();
@@ -2921,7 +2832,7 @@ const COSMO={
     // Squish/stretch: gentler lerp when on ground to avoid bobbing fighting squish
     const lerpR=this.onGround?.14:.18;
     this.sqX=clp(lerp(this.sqX,1,lerpR),.62,1.5);this.sqY=clp(lerp(this.sqY,1,lerpR),.62,1.5);
-    this.glowHue=(this.glowHue+1.4)%360;this.thrPh+=.17;
+    this.glowHue=200;// fixed hue — no cyclingthis.thrPh+=.17;
     const spd=GS?GS.speed:4;
     if(this.onGround)this.runPh+=spd*0.18;else this.runPh+=.06;
     this.trail.push({x:this.x+this.w/2,y:this.y+this.h/2});if(this.trail.length>14)this.trail.shift();
@@ -2935,10 +2846,10 @@ const COSMO={
   draw(){
     const cx=this.x+this.w/2,cy=this.y+this.h/2;
     // Motion trail
-    for(let i=1;i<this.trail.length;i++){const t=this.trail[i];const f=i/this.trail.length;ctx.globalAlpha=clp(f*.22,0,1);ctx.fillStyle=`hsl(${this.glowHue},100%,65%)`;ctx.beginPath();sarc(ctx,t.x,t.y,Math.max(.4,7*f),0,PI2);ctx.fill();}ctx.globalAlpha=1;
+    ctx.globalAlpha=1;// trail disabled
     if(this.invOn&&Math.floor(frame/4)%2===0)return;
 
-    const bc=this.shieldOn?[0,220,255]:this.boostOn?[255,145,0]:[clp(Math.round(127+127*Math.sin(frame*.038)),0,255),clp(Math.round(127+127*Math.sin(frame*.038+2.1)),0,255),clp(Math.round(127+127*Math.sin(frame*.038+4.2)),0,255)];
+    const bc=this.shieldOn?[0,200,255]:this.boostOn?[255,130,0]:[80,160,255];
     const R=this.w*.46,bR=R*.72;
 
     // Running body bob — very gentle, only when actually moving on ground
@@ -2960,7 +2871,7 @@ const COSMO={
       const footColor=rgba(bc.map(v=>Math.floor(v*.38)),1);
 
       ctx.save();
-      ctx.shadowColor=rgba(bc,.4);ctx.shadowBlur=5;
+      ctx.shadowColor=rgba(bc,.2);ctx.shadowBlur=3;
 
       // Left leg
       ctx.fillStyle=legColor;
@@ -3008,7 +2919,7 @@ const COSMO={
     }
 
     // ── BODY ──────────────────────────────────────────────────────
-    ctx.shadowColor=rgba(bc,.88);ctx.shadowBlur=22;
+    ctx.shadowColor=rgba(bc,.3);ctx.shadowBlur=3;
     const bodyG=srgd(ctx,-R*.24,-R*.28,R*.07,0,0,R);
     bodyG.addColorStop(0,'rgba(255,255,255,0.86)');bodyG.addColorStop(.22,rgba(bc,.94));bodyG.addColorStop(.68,rgba(bc.map(v=>Math.floor(v*.7)),.94));bodyG.addColorStop(1,rgba(bc.map(v=>Math.floor(v*.5)),1));
     ctx.fillStyle=bodyG;
@@ -3535,85 +3446,7 @@ const RINGS=[
   });
 })();
 
-function drawProtonRings(){
-  const cx=COSMO.x+COSMO.w/2,cy=COSMO.y+COSMO.h/2;
-  const R=Math.max(24,COSMO.w*.56);
-  const baseHue=COSMO.glowHue;
-  const inv=COSMO.invOn&&Math.floor(frame/4)%2===0;
-
-  RINGS.forEach((ring,ri)=>{
-    ring.angle+=ring.speed;
-    const rx=R*ring.r_scale;
-    const ry=Math.max(3,rx*(.14+Math.abs(Math.sin(ring.tilt)*.48)));
-    const hue=(baseHue+ring.hueBase)%360;
-
-    ctx.save();ctx.translate(cx,cy);ctx.rotate(ring.angle);
-
-    if(ring.planet){
-      // ── PLANET-STYLE large glowing ring arc ──────────────────
-      if(!inv){
-        const pa=.18+.1*Math.sin(frame*.03);
-        // Outer glow
-        ctx.strokeStyle=`hsla(${hue},100%,68%,${pa*.5})`;
-        ctx.lineWidth=4;ctx.setLineDash([]);
-        ctx.beginPath();sell(ctx,0,0,rx,ry,0,0,PI2);ctx.stroke();
-        // Inner bright line
-        ctx.strokeStyle=`hsla(${hue},100%,88%,${pa})`;
-        ctx.lineWidth=1.5;
-        ctx.beginPath();sell(ctx,0,0,rx,ry,0,0,PI2);ctx.stroke();
-        // Glow dots at 0/180deg
-        [[0],[Math.PI]].forEach(([a])=>{
-          const ex=Math.cos(a)*rx,ey=Math.sin(a)*ry;
-          const cosA=Math.cos(ring.angle),sinA=Math.sin(ring.angle);
-          const wx2=ex*cosA-ey*sinA,wy2=ex*sinA+ey*cosA;
-          ctx.restore();ctx.save();ctx.translate(cx,cy);
-          ctx.shadowColor=`hsl(${hue},100%,70%)`;ctx.shadowBlur=10;
-          ctx.fillStyle=`hsl(${hue},100%,80%)`;
-          ctx.beginPath();sarc(ctx,wx2,wy2,3,0,PI2);ctx.fill();
-          ctx.shadowBlur=0;ctx.translate(-cx,-cy);
-        });
-      }
-      ctx.restore();
-      return;
-    }
-
-    // ── PARTICLE ring ─────────────────────────────────────────
-    const ra=inv?0:.22+.12*Math.sin(frame*.04+ri);
-    ctx.strokeStyle=`hsla(${hue},100%,72%,${ra})`;
-    ctx.lineWidth=ri===0?1.2:1;
-    ctx.setLineDash(ri===0?[4,9]:[2,7]);
-    ctx.beginPath();sell(ctx,0,0,rx,ry,0,0,PI2);ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.restore();
-
-    if(inv)return;
-    ring.particles.forEach(p=>{
-      p.t=(p.t+Math.abs(ring.speed)*.016+.0025)%1;
-      const a=p.t*PI2;
-      const ex=Math.cos(a)*rx,ey=Math.sin(a)*ry;
-      const cosA=Math.cos(ring.angle),sinA=Math.sin(ring.angle);
-      const wx=cx+ex*cosA-ey*sinA,wy=cy+ex*sinA+ey*cosA;
-
-      // Trail
-      p.trail.push({x:wx,y:wy});
-      if(p.trail.length>9)p.trail.shift();
-      for(let t=1;t<p.trail.length;t++){
-        const tf=t/p.trail.length;
-        ctx.globalAlpha=clp(tf*.3,0,.3);
-        ctx.fillStyle=`hsl(${(hue+p.hueOff)%360},100%,78%)`;
-        ctx.beginPath();sarc(ctx,p.trail[t].x,p.trail[t].y,Math.max(.25,p.sz*tf*.55),0,PI2);ctx.fill();
-      }
-      ctx.globalAlpha=1;
-      const ph2=(hue+p.hueOff)%360;
-      ctx.shadowColor=`hsl(${ph2},100%,70%)`;ctx.shadowBlur=9;
-      ctx.fillStyle=`hsl(${ph2},100%,82%)`;
-      ctx.beginPath();sarc(ctx,wx,wy,Math.max(.4,p.sz),0,PI2);ctx.fill();
-      ctx.fillStyle='rgba(255,255,255,.85)';
-      ctx.beginPath();sarc(ctx,wx,wy,Math.max(.15,p.sz*.32),0,PI2);ctx.fill();
-      ctx.shadowBlur=0;ctx.globalAlpha=1;
-    });
-  });
-}
+function drawProtonRings(){/* rings disabled for clean visuals */}
 
 // ════════════════════════════════════════════════════════════════
 //  PAUSE
@@ -4089,32 +3922,98 @@ function lbSave(arr){localStorage.setItem(LB_KEY,JSON.stringify(arr));}
 
 function lbSubmit(name,score,gems,world){
   const arr=lbGet();
-  arr.push({name,score,gems,world,date:new Date().toLocaleDateString()});
+  const lvlLabel=_getLevelLabel();
+  arr.push({name,score,gems,world,level:lvlLabel,date:new Date().toLocaleDateString()});
   arr.sort((a,b)=>b.score-a.score);
   lbSave(arr.slice(0,10));
 }
 
-function lbBuildHTML(){
-  const arr=lbGet();
-  if(arr.length===0)return'<div style="color:rgba(255,255,255,.3);font-size:13px;padding:20px 0">No scores yet — be the first pilot! 🚀</div>';
+function _getLevelLabel(){
+  if(!currentLevel) return '🌌 AURORA · EASY';
+  if(currentLevel===LEVELS.aurora)    return '🌌 AURORA · EASY';
+  if(currentLevel===LEVELS.nebula)    return '🌠 NEBULA · MEDIUM';
+  if(currentLevel===LEVELS.galaxy)    return '🌀 GALAXY · HARD';
+  if(currentLevel===LEVELS.blackhole) return '🕳 BLACKHOLE · EXTREME';
+  return '🌌 AURORA · EASY';
+}
+
+function lbBuildHTML(filter){
+  let arr=lbGet();
+  if(filter && filter!=='all'){
+    arr=arr.filter(r=> r.level && r.level.toUpperCase().includes(filter.toUpperCase()));
+  }
+  if(arr.length===0)return'<div style="color:rgba(255,255,255,.3);font-size:13px;padding:24px 0;text-align:center;">'+
+    (filter&&filter!=='all'?'No scores for this difficulty yet! 🚀':'No scores yet — be the first pilot! 🚀')+'</div>';
   const medals=['🥇','🥈','🥉'];
+  // Level badge colours
+  const lvlColors={
+    'AURORA':'rgba(128,255,204,.85)',
+    'NEBULA':'rgba(136,187,255,.85)',
+    'GALAXY':'rgba(255,170,85,.85)',
+    'BLACKHOLE':'rgba(204,85,255,.85)',
+  };
+  const lvlBg={
+    'AURORA':'rgba(0,180,120,.18)',
+    'NEBULA':'rgba(80,140,255,.18)',
+    'GALAXY':'rgba(255,140,30,.18)',
+    'BLACKHOLE':'rgba(160,40,255,.18)',
+  };
+  function _lvlBadge(level){
+    if(!level) return '';
+    // Extract key: "🌌 AURORA · EASY" → "AURORA"
+    const key = level.replace(/[^A-Z]/g,'').replace('EASY','').replace('MEDIUM','').replace('HARD','').replace('EXTREME','') || 'AURORA';
+    const match = Object.keys(lvlColors).find(k=>level.toUpperCase().includes(k))||'AURORA';
+    const col = lvlColors[match]||'rgba(200,200,255,.7)';
+    const bg  = lvlBg[match]||'rgba(80,80,200,.15)';
+    return `<span style="font-family:'Fredoka One',cursive;font-size:9px;padding:2px 8px;border-radius:20px;background:${bg};color:${col};border:1px solid ${col.replace('.85','.35')};letter-spacing:1px;white-space:nowrap;">${level||'EASY'}</span>`;
+  }
   return arr.map((r,i)=>{
     const m=medals[i]||(i+1)+'.';
-    return `<div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);">
-      <div style="font-size:${i<3?'20':'13'}px;min-width:28px;text-align:center;">${m}</div>
-      <div style="flex:1;text-align:left;">
-        <div style="font-family:'Fredoka One',cursive;font-size:14px;color:#fff;">${r.name}</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3);">${r.world} · ${r.date}</div>
+    const rankColor = i===0?'#ffd700':i===1?'#c0c0c0':i===2?'#cd7f32':'rgba(255,255,255,.5)';
+    return `<div style="display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.06);${i===0?'background:rgba(255,215,0,.04);border-radius:10px;':''}">
+      <div style="font-size:${i<3?'22':'13'}px;min-width:28px;text-align:center;color:${rankColor};">${m}</div>
+      <div style="flex:1;text-align:left;min-width:0;">
+        <div style="font-family:'Fredoka One',cursive;font-size:15px;color:#fff;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${r.name}</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:3px;flex-wrap:wrap;">
+          ${_lvlBadge(r.level||'🌌 AURORA · EASY')}
+          <span style="font-size:9px;color:rgba(255,255,255,.25);">${r.world||''}${r.world&&r.date?' · ':''}${r.date||''}</span>
+        </div>
       </div>
-      <div style="font-family:'Fredoka One',cursive;font-size:18px;color:#ffd700;text-shadow:0 0 8px rgba(255,200,0,.5);">${r.score}</div>
-      <div style="font-size:11px;color:rgba(80,220,255,.7);">💎${r.gems}</div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;">
+        <div style="font-family:'Fredoka One',cursive;font-size:20px;color:#ffd700;text-shadow:0 0 10px rgba(255,200,0,.6);line-height:1;">${r.score}</div>
+        <div style="font-size:10px;color:rgba(80,220,255,.65);">💎 ${r.gems}</div>
+      </div>
     </div>`;
   }).join('');
 }
 
+// Current filter state for leaderboard
+let _lbActiveFilter = 'all';
+
 function showLeaderboard(){
-  document.getElementById('lbContent').innerHTML=lbBuildHTML();
+  _lbActiveFilter = 'all';
+  _syncLbTabs();
+  document.getElementById('lbContent').innerHTML=lbBuildHTML(_lbActiveFilter);
   showScr('lbScr');
+}
+
+function lbFilter(key){
+  _lbActiveFilter = key;
+  _syncLbTabs();
+  document.getElementById('lbContent').innerHTML=lbBuildHTML(_lbActiveFilter);
+}
+
+function _syncLbTabs(){
+  document.querySelectorAll('.lb-tab').forEach(t=>{
+    t.classList.toggle('active', t.dataset.filter===_lbActiveFilter);
+  });
+}
+
+function clearLbConfirm(){
+  if(confirm('Clear all leaderboard scores? This cannot be undone.')){
+    localStorage.removeItem(LB_KEY);
+    document.getElementById('lbContent').innerHTML=lbBuildHTML(_lbActiveFilter);
+  }
 }
 
 
